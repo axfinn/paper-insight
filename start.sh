@@ -14,6 +14,23 @@ if [ -f "$SCRIPT_DIR/.env" ]; then
     set +a
 fi
 
+# ─── 进程锁（防止重复启动）───
+LOCK_FILE="$SCRIPT_DIR/.autodev.lock"
+if [ -f "$LOCK_FILE" ]; then
+    OLD_PID=$(cat "$LOCK_FILE")
+    # 检查进程是否还存在
+    if kill -0 "$OLD_PID" 2>/dev/null; then
+        echo "[!] autodev 已在运行 (PID: $OLD_PID)，退出。"
+        exit 1
+    else
+        echo "[*] 发现 stale 锁文件，删除..."
+        rm -f "$LOCK_FILE"
+    fi
+fi
+# 写入当前进程 PID
+echo $$ > "$LOCK_FILE"
+trap "rm -f '$LOCK_FILE'; exit 0" EXIT INT TERM
+
 # ─── 自动下载 autodev ───
 install_autodev() {
     if [ -d "$SCRIPT_DIR/clawtest/autodev" ]; then

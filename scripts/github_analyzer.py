@@ -240,11 +240,35 @@ def main():
             print(f"    No projects found")
             continue
 
-        # 分析项目
-        analyzed = analyze_projects(projects)
+        # 读取已分析的项目（避免重复分析）
+        data_file = output_dir / f"{today}_github_{lang}_data.json"
+        analyzed_map = {}
+        if data_file.exists():
+            with open(data_file, 'r', encoding='utf-8') as f:
+                old_data = json.load(f)
+                for p in old_data.get('projects', []):
+                    if p.get('full_name'):
+                        analyzed_map[p['full_name']] = p
+            print(f"  [*] 已存在 {len(analyzed_map)} 个已分析项目")
+
+        # 只分析未分析过的项目
+        projects_to_analyze = []
+        for p in projects:
+            if p.get('full_name') not in analyzed_map:
+                projects_to_analyze.append(p)
+
+        print(f"  [*] 需要分析 {len(projects_to_analyze)} 个新项目")
+
+        if projects_to_analyze:
+            analyzed = analyze_projects(projects_to_analyze)
+        else:
+            analyzed = []
+
+        # 合并结果
+        final_projects = list(analyzed_map.values()) + analyzed
 
         # 生成报告
-        report = generate_ranking_report(lang, projects, analyzed)
+        report = generate_ranking_report(lang, final_projects, analyzed)
 
         # 保存报告
         report_file = output_dir / f"{today}_github_{lang}.md"
@@ -252,6 +276,10 @@ def main():
             f.write(report)
 
         print(f"[+] Report saved: {report_file}")
+
+        # 保存分析后的数据
+        with open(data_file, 'w', encoding='utf-8') as f:
+            json.dump({'lang': lang, 'projects': final_projects, 'generated_at': datetime.now().isoformat()}, f, ensure_ascii=False, indent=2)
 
 
 if __name__ == '__main__':

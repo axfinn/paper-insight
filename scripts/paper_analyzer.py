@@ -285,7 +285,7 @@ def main():
     reports_dir = Path(__file__).parent.parent / 'reports'
     reports_dir.mkdir(exist_ok=True)
 
-    # 获取最新的论文文件
+    # 获取今天的日期
     today = datetime.now().strftime('%Y%m%d')
 
     # 分析所有行业的论文
@@ -296,13 +296,37 @@ def main():
             data = json.load(f)
 
         industry = data['industry']
-        papers = data['papers']
+        new_papers = data['papers']
 
-        # 分析论文
-        analyzed = analyze_industry_papers(industry, papers)
+        # 读取已分析的结果（避免重复分析）
+        data_file = reports_dir / f"{today}_{industry.replace('/', '_')}_data.json"
+        analyzed_map = {}
+        if data_file.exists():
+            with open(data_file, 'r', encoding='utf-8') as f:
+                old_data = json.load(f)
+                for p in old_data.get('papers', []):
+                    if p.get('title'):
+                        analyzed_map[p['title']] = p
+            print(f"  [*] 已存在 {len(analyzed_map)} 篇已分析论文")
+
+        # 只分析未分析过的论文
+        papers_to_analyze = []
+        for p in new_papers:
+            if p['title'] not in analyzed_map:
+                papers_to_analyze.append(p)
+
+        print(f"  [*] 需要分析 {len(papers_to_analyze)} 篇新论文")
+
+        if papers_to_analyze:
+            analyzed = analyze_industry_papers(industry, papers_to_analyze)
+        else:
+            analyzed = []
+
+        # 合并结果（已有 + 新分析）
+        final_papers = list(analyzed_map.values()) + analyzed
 
         # 生成报告
-        report = generate_report(industry, analyzed)
+        report = generate_report(industry, final_papers)
 
         # 保存报告
         report_file = reports_dir / f"{today}_{industry.replace('/', '_')}.md"
@@ -312,9 +336,8 @@ def main():
         print(f"[+] Report saved: {report_file}")
 
         # 保存分析后的数据
-        data_file = reports_dir / f"{today}_{industry.replace('/', '_')}_data.json"
         with open(data_file, 'w', encoding='utf-8') as f:
-            json.dump({'industry': industry, 'papers': analyzed, 'generated_at': datetime.now().isoformat()}, f, ensure_ascii=False, indent=2)
+            json.dump({'industry': industry, 'papers': final_papers, 'generated_at': datetime.now().isoformat()}, f, ensure_ascii=False, indent=2)
 
     print("\n[+] All reports generated!")
 
