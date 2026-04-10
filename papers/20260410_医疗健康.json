@@ -1,0 +1,167 @@
+{
+  "industry": "医疗健康",
+  "fetched_at": "2026-04-10T14:13:25.945314",
+  "papers": [
+    {
+      "source": "pubmed",
+      "id": "pubmed:41957670",
+      "title": "The acceptability, adherence, and preliminary effectiveness of a digital treatment for adolescents with subthreshold eating disorders. Findings from an open feasibility trial in routine clinical care.",
+      "summary": "No abstract available",
+      "published": "2026 Apr 9",
+      "authors": [
+        "Holgersen G",
+        "Nordby ES",
+        "Espeset EMS",
+        "Nordgreen T"
+      ],
+      "journal": "J Eat Disord",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41957670/"
+    },
+    {
+      "source": "pubmed",
+      "id": "pubmed:41957637",
+      "title": "If you build it who will come? Widening access through a place-based Rural Training Stream to address local medical workforce shortages.",
+      "summary": "No abstract available",
+      "published": "2026 Apr 9",
+      "authors": [
+        "Fuller L",
+        "Deakin JB",
+        "Gray L",
+        "McGrail M"
+      ],
+      "journal": "BMC Med Educ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41957637/"
+    },
+    {
+      "source": "pubmed",
+      "id": "pubmed:41957635",
+      "title": "Financial toxicity and psychosocial distress of breast and cervical cancer patients at a tertiary healthcare facility in south-western Nigeria.",
+      "summary": "No abstract available",
+      "published": "2026 Apr 9",
+      "authors": [
+        "Busari DA",
+        "Ntekim A",
+        "John-Akinola YO",
+        "Adejumo PO",
+        "Huo D",
+        "Olopade OI",
+        "Oluwasanu MM"
+      ],
+      "journal": "BMC Womens Health",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41957635/"
+    },
+    {
+      "source": "pubmed",
+      "id": "pubmed:41957624",
+      "title": "Professional support to improve rural medical workforce retention, what works in what context: a realist evaluation.",
+      "summary": "No abstract available",
+      "published": "2026 Apr 9",
+      "authors": [
+        "O'Sullivan B",
+        "Battye K",
+        "Roczo D"
+      ],
+      "journal": "Hum Resour Health",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41957624/"
+    },
+    {
+      "source": "pubmed",
+      "id": "pubmed:41957617",
+      "title": "Assessing the accuracy and educational value of ChatGPT-generated content for core topics in cardiology: a descriptive analysis at Selçuk University Cardiology Clinic.",
+      "summary": "No abstract available",
+      "published": "2026 Apr 9",
+      "authors": [
+        "Tezcan H",
+        "Tunçez A",
+        "Gürses KM",
+        "Özen Y",
+        "Yalçın MU"
+      ],
+      "journal": "BMC Med Educ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41957617/"
+    },
+    {
+      "source": "pubmed",
+      "id": "pubmed:41957601",
+      "title": "Teaching radiology in undergraduate programmes in medical schools in francophone sub-Saharan Africa : a multicenter survey.",
+      "summary": "No abstract available",
+      "published": "2026 Apr 9",
+      "authors": [
+        "Gbande P",
+        "Tamekloe TAK",
+        "Tchaou M",
+        "Sonhaye L",
+        "Agoda-Koussema LK",
+        "Adjenou K"
+      ],
+      "journal": "BMC Med Educ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41957601/"
+    },
+    {
+      "source": "pubmed",
+      "id": "pubmed:41957598",
+      "title": "Assessment of antibiotic stewardship knowledge, attitudes, and prescribing preparedness among medical, pharmacy, and dental students in Kuwait.",
+      "summary": "No abstract available",
+      "published": "2026 Apr 9",
+      "authors": [
+        "Alghanem SS",
+        "Taqi A",
+        "Alzemami SW",
+        "Awad A"
+      ],
+      "journal": "BMC Med Educ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41957598/"
+    },
+    {
+      "source": "pubmed",
+      "id": "pubmed:41957591",
+      "title": "Facilitators and barriers to rehabilitation exercise adherence among patients after total hip and total knee arthroplasty: a qualitative meta-synthesis.",
+      "summary": "No abstract available",
+      "published": "2026 Apr 9",
+      "authors": [
+        "Chen N",
+        "Yuan X",
+        "Yin Y",
+        "Chen Y"
+      ],
+      "journal": "BMC Musculoskelet Disord",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41957591/"
+    },
+    {
+      "source": "pubmed",
+      "id": "pubmed:41957580",
+      "title": "Whole-genome analysis of a multidrug-resistant Klebsiella michiganensis environmental isolate from an orthopedic ward in Mwanza, Tanzania reveals IncF-family plasmid replicon signatures associated with resistance determinants.",
+      "summary": "No abstract available",
+      "published": "2026 Apr 9",
+      "authors": [
+        "Mboowa G",
+        "Kidenya BR",
+        "Sserwadda I",
+        "Kanyerezi S",
+        "Seni J"
+      ],
+      "journal": "BMC Genomics",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41957580/"
+    },
+    {
+      "source": "pubmed",
+      "id": "pubmed:41957578",
+      "title": "Multi-stakeholder disaster healthcare training as a figurine-based tabletop simulation in coastal Karnataka, India: a kinesthetic teaching-learning experience.",
+      "summary": "No abstract available",
+      "published": "2026 Apr 9",
+      "authors": [
+        "Hebbar A",
+        "Srivastava SK",
+        "Sirur FM",
+        "T R A",
+        "Prakash P",
+        "B N L",
+        "Bhat A",
+        "Balakrishnan JM",
+        "Sudhi M"
+      ],
+      "journal": "Int J Emerg Med",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41957578/"
+    }
+  ]
+}

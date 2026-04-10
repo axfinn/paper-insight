@@ -1,0 +1,233 @@
+{
+  "industry": "半导体/芯片",
+  "fetched_at": "2026-04-10T14:13:25.946213",
+  "papers": [
+    {
+      "source": "arxiv",
+      "id": "http://arxiv.org/abs/2604.08472v1",
+      "title": "High-efficiency graphene-silicon slot-waveguide microring modulator at 1.5 μm and 2 μm wavelength bands",
+      "summary": "Electro-optic (E/O) modulators are crucial for optical communication but face a trade-off between modulation bandwidth and efficiency. A small footprint could reduce the capacitance and increase the bandwidth, however, this usually results in a low modulation efficiency. Here, we present an integrated E/O modulator that simultaneously achieves wideband large bandwidth and high modu- lation efficiency operation by embedding a partially overlapped double-layer graphene on a compact silicon slot waveguide microring resonator. At 1550 nm, the graphene-silicon slot-waveguide demon- strates a high phase modulation efficiency of Vπ L = 220 V μm, and the corresponding microring modulator has a large bandwidth of over 70 GHz, a compact active length of 10 μm, and an optical modulation amplitude (OMA) of -1.97 dBm under a 3-V voltage swing. The modulator operates at a data rate of 50 Gbit/s with an open eye diagram under a 2-V Vpp RF drive voltage. The graphene modulator operation is broadband, and we also characterize its performance at 2 μm wavelength band. At 2 μm wavelength band, the microring modulator has a large bandwidth of over 20 GHz, an OMA of -3.36 dBm under a 6-V voltage swing, and an open eye diagram at 20 Gbit/s with a 2-V Vpp RF drive voltage. The difference in performance is caused by the bandwidth limit of the 2 μm wavelength band measurement setup. The broadband, large bandwidth, compact, highly effi- cient, and energy efficient graphene E/O modulator has the potential to enable large-scale graphene photonic integrated circuits, facilitating a broad range of applications such as optical interconnects, optical neural networks, and programmable photonic circuits.",
+      "published": "2026-04-09",
+      "authors": [
+        "Chao Luan",
+        "Deming Kong",
+        "Yong Liu",
+        "Yunhong Ding",
+        "Hao Hu"
+      ],
+      "categories": [
+        "physics.optics"
+      ],
+      "url": "http://arxiv.org/abs/2604.08472v1"
+    },
+    {
+      "source": "arxiv",
+      "id": "http://arxiv.org/abs/2604.04213v1",
+      "title": "Area Optimization of Open-Source Low-Power INA in 130nm CMOS using Hybrid Mixed-Variable PSO",
+      "summary": "As open-source silicon initiatives democratize access to integrated circuit development using multi-project environments, silicon area has become a premium resource. However, minimizing this layout area traditionally forces designers to compromise on core performance specifications. To address this challenge, this paper presents an open-source framework based on a hybrid mixed-variable particle swarm optimization algorithm and the gm/ID methodology to minimize the layout area of complex analog circuits while meeting design requirements. The framework's efficacy is demonstrated by designing a low-power instrumentation amplifier that achieves a 90.33% reduction in gate area over existing implementations.",
+      "published": "2026-04-05",
+      "authors": [
+        "Avishka Herath",
+        "Chanula Luckshan",
+        "Lochana Katugaha",
+        "Udara Mendis",
+        "Kithmin Wickremasinghe"
+      ],
+      "categories": [
+        "eess.SY"
+      ],
+      "url": "http://arxiv.org/abs/2604.04213v1"
+    },
+    {
+      "source": "arxiv",
+      "id": "http://arxiv.org/abs/2604.03468v1",
+      "title": "Silicon Photonics-based Heterodyne Interferometric Imager for free-space imaging",
+      "summary": "This paper reports on the design, fabrication, and demonstration of a silicon photonics based heterodyne interferometric imaging system. The photonic integrated circuit (PIC) can perform one-dimensional spectroscopy for unique input spectrums using a single baseline within its 91 available baselines. The PIC uses polarization diversifying gratings to separate incoming light into two distinct polarizations, an on-chip 2x4 optical hybrid, and a strong local oscillator (LO) to perform the heterodyne measurements. The optical hybrids combine the input signals with the LO and splitting them into 2 components pairs for phase sensitive measurements. Furthermore, the PIC can perform 2-D image reconstruction by combining many baseline pairs to measure the visibility of a simple target. These demonstrations show the PIC's capabilities for 1-D spectroscopy and 2-D imaging applications.",
+      "published": "2026-04-03",
+      "authors": [
+        "Humphry Chen",
+        "Mingye Fu",
+        "Shun-Hung Lee",
+        "Shelbe Timothy",
+        "Lawrence Shing",
+        "Gopal Vasudevan",
+        "Tony Kowalczyk",
+        "Neal Hurlburt",
+        "Sung-Joo Ben Yoo"
+      ],
+      "categories": [
+        "physics.optics",
+        "astro-ph.IM"
+      ],
+      "url": "http://arxiv.org/abs/2604.03468v1"
+    },
+    {
+      "source": "arxiv",
+      "id": "http://arxiv.org/abs/2604.02551v1",
+      "title": "Construction and characterisation of the DarkSide-20k veto silicon photo-multiplier tiles",
+      "summary": "Silicon photo-multipliers (SiPMs) are state-of-the-art sensors capable of detecting a single photoelectron under cryogenic conditions, with potentially lower radioactivity than widely used photomultiplier tubes. The DarkSide-20k experiment, designed to perform direct dark matter searches using liquid argon as the target material, employs SiPM technology to detect interactions in the active detector volumes, including the central dual-phase Time Projection Chamber and the Inner and Outer Veto volumes. The vetoes are designed to discriminate against radiogenic neutron and cosmic muon backgrounds associated with the dark matter search.   This paper describes the completed production and test protocols for the \"Veto Tiles\" (called vTiles, arrays of 24 SiPMs integrated on a printed circuit board providing the power distribution and signal amplification); 16 vTiles are grouped into \"Veto Photo-Detector Units\" to instrument the Inner Veto volume. Each vTile underwent detailed testing at room and cryogenic temperatures, confirming stable operation, high signal-to-noise ratio, and low radioactive contamination, demonstrating the robustness of the proposed design for cryogenic conditions. The final production yield exceeded 87%, surpassing the 80% requirement and corresponding to 1920 Veto Tiles to populate 120 Veto Photo-Detector Units, plus an additional 6% as spares.",
+      "published": "2026-04-02",
+      "authors": [
+        "DarkSide-20k collaboration"
+      ],
+      "categories": [
+        "physics.ins-det",
+        "hep-ex"
+      ],
+      "url": "http://arxiv.org/abs/2604.02551v1"
+    },
+    {
+      "source": "arxiv",
+      "id": "http://arxiv.org/abs/2604.00138v1",
+      "title": "Quantum memory on a nanophotonic silicon chip",
+      "summary": "Integrated photonic circuits offer great promise for quantum technologies. However, due to the rapid propagation of light, many envisioned applications require efficient on-chip quantum memories with a programmable delay, compact footprint, and high fidelity. Implementing this based on standard semiconductor processing technology is an outstanding challenge. Here, we realize such memories using erbium-doped silicon waveguides, fabricated as part of a multi-wafer project by a nanophotonic foundry. We demonstrate light storage with a $44.2(9)\\ \\text{MHz}$ bandwidth and a programmable delay exceeding $1\\ μ\\text{s}$ in a device with a footprint of only $1.5\\times 10^{-2}\\ \\text{mm}^2$, outperforming on-chip delay lines by many orders of magnitude. The phase of the read-out light field is preserved with a visibility of $91.3(30)\\ \\%$. The efficiency of $1.89(28)\\times 10^{-8}$ can be improved in future devices through resonator enhancement and higher dopant concentrations. With this, the demonstrated approach will pave the way towards applications in photonic quantum computing based on scalable silicon processing technology.",
+      "published": "2026-03-31",
+      "authors": [
+        "Stephan Rinner",
+        "Jonas Schmitt",
+        "Kilian Sandholzer",
+        "Andreas Reiserer"
+      ],
+      "categories": [
+        "quant-ph",
+        "cond-mat.other"
+      ],
+      "url": "http://arxiv.org/abs/2604.00138v1"
+    },
+    {
+      "source": "arxiv",
+      "id": "http://arxiv.org/abs/2603.28676v2",
+      "title": "Kramers-Kronig causality in integrated photonics: The spectral tension between ultraviolet transition and mid-infrared absorption",
+      "summary": "Dispersion engineering via geometric confinement is essential to integrated photonics, enabling phenomena such as soliton microcombs, supercontinua, parametric oscillators, and entangled photons. However, prevailing methodologies rely on semi-empirical Sellmeier models that assume idealized material purity, neglecting the pronounced dispersion shifts induced by residual impurities like hydrogen-related bonds. Here, we demonstrate that these residual bonds fundamentally alter the dispersion landscape spanning from the ultraviolet (UV) to the mid-infrared (MIR) spectra. Specifically, they introduce MIR vibrational absorption while simultaneously modifying UV electronic transition, shifting the bandgap and UV pole. We show that the spectral tension between these UV and MIR modifications dictates the group velocity dispersion from the visible to the near-infrared (NIR) via the Kramers-Kronig causality. We experimentally validate this phenomenon through systematic characterization of broadband loss and dispersion in ultralow-loss silicon nitride photonic integrated circuits. By rigorously incorporating these effects, we bridge the gap between empirical fitting and predictive physical modelling. Our study resolves long-standing discrepancies in dispersion engineering, providing precision control essential for next-generation integrated photonics.",
+      "published": "2026-03-30",
+      "authors": [
+        "Yue Hu",
+        "Zhenyuan Shang",
+        "Chenxi Zhang",
+        "Yuanjie Ning",
+        "Weiqin Zheng",
+        "Dengke Chen",
+        "Sanli Huang",
+        "Baoqi Shi",
+        "Zeying Zhong",
+        "Hao Tan",
+        "Wei Sun",
+        "Yi-Han Luo",
+        "Xinmao Yin",
+        "Zhi-Chuan Niu",
+        "Junqiu Liu"
+      ],
+      "categories": [
+        "physics.optics"
+      ],
+      "url": "http://arxiv.org/abs/2603.28676v2"
+    },
+    {
+      "source": "arxiv",
+      "id": "http://arxiv.org/abs/2603.27711v1",
+      "title": "Low-loss phononic integrated circuits based on a silicon nitride-lithium niobate platform",
+      "summary": "Microwave-frequency acoustic waves in solids have emerged as a versatile platform for both classical and quantum applications. While phononic integrated devices and circuits are being developed on various material platforms, an ideal phononic integrated circuit (PnIC) platform should simultaneously support low-loss waveguide structures, high-quality-factor resonators, high-performance modulators, and efficient electromechanical transducers. Here, we establish a low-loss gigahertz-frequency PnIC platform based on patterned thin-film silicon nitride (SiN) on lithium niobate (LN) substrate. We develop low-loss PnIC building blocks including waveguides, directional couplers, and high-quality-factor (high-Q) ring resonators. As an application, we demonstrate a 1-GHz phononic oscillator based on a ring resonator, reaching a low phase noise of -159.0 dBc/Hz at a 100-kHz offset frequency. Our low-loss PnICs could meet the requirements in microwave acoustics, quantum phononics, and integrated hybrid systems combining phonons, photons, superconducting qubits, and solid-state defects.",
+      "published": "2026-03-29",
+      "authors": [
+        "Jun Ji",
+        "Joseph G Thomas",
+        "Zichen Xi",
+        "Ruxuan Liu",
+        "Kinson Fang",
+        "Yuan Qin",
+        "Andreas Beling",
+        "Xu Yi",
+        "Yizheng Zhu",
+        "Linbo Shao"
+      ],
+      "categories": [
+        "physics.app-ph",
+        "eess.SP"
+      ],
+      "url": "http://arxiv.org/abs/2603.27711v1"
+    },
+    {
+      "source": "arxiv",
+      "id": "http://arxiv.org/abs/2603.23815v1",
+      "title": "Visible Spectral-Domain Optical Coherence Tomography for Photonic Integrated Circuits Characterization",
+      "summary": "Visible photonic integrated circuits underpin applications ranging from AR/VR to quantum control, yet lack a high-resolution, nondestructive diagnostic comparable to the optical frequency-domain reflectometry used in infrared silicon photonics. Here we adapt spectral-domain optical coherence tomography to measure guided-mode back-reflections in visible PICs. Broadband visible light injected into a circuit generates back-reflections that interfere with a depth-referencing local oscillator, and the resulting spectral fringes are recorded on a spectrometer. We validate the approach by resolving multiple round-trip echoes in a waveguide-coupled ring resonator using only single-port access. We then extend it to circuits integrated with diamond quantum micro-chiplets, clearly resolving input and output facets as well as PIC--QMC transition regions. The system achieves shot-noise-limited sensitivity, 50 dB dynamic range, 8 um axial resolution in silicon nitride, and a 2 mm imaging depth at 6 dB roll-off. SD-OCT therefore provides a practical, high-resolution diagnostic for visible PICs that uses a broadband probe source and requires only single-port optical access, enabling rapid characterization of propagation loss, backscattering, and dispersion.",
+      "published": "2026-03-25",
+      "authors": [
+        "Yin Min Goh",
+        "Chao Li",
+        "Yunchan Hwang",
+        "Helaman Flores",
+        "Mahmoud Jalali Mehrabad",
+        "James G. Fujimoto",
+        "Dirk R. Englund"
+      ],
+      "categories": [
+        "physics.optics",
+        "physics.app-ph"
+      ],
+      "url": "http://arxiv.org/abs/2603.23815v1"
+    },
+    {
+      "source": "arxiv",
+      "id": "http://arxiv.org/abs/2603.23636v1",
+      "title": "Characterization and Comparison of Energy Relaxation in Fluxonium Qubits",
+      "summary": "Fluxonium superconducting qubits have demonstrated long coherence times and high single- and two-qubit gate fidelities, making them a favorable building block for superconducting quantum processors. We investigate the dominant limitations to fluxonium qubit energy relaxation time $T_1$ using a set of eight planar, aluminum-on-silicon qubits. We find that a circuit-based model for capacitive dielectric loss best captures the frequency dependence of $T_1$, which we analyze within both a two-level and a six-level energy relaxation model. We convert the measured $T_1$ into an effective capacitive quality factor $Q_\\mathrm{C}^{\\mathrm{eff}}$ to compare qubits on equal footing, accounting for independently estimated contributions from $1/f$ flux noise and radiative loss to the control and readout circuitry. We apply this methodology to compare qubits from two fabrication processes: a baseline process and one that applies a fluorine-based wet treatment prior to Josephson junction deposition. We resolve a small improvement of (13.8 $\\pm$ 8.4$)\\%$ in the process mean $Q_\\mathrm{C}^{\\mathrm{eff}}$, indicating that the fluorine treatment may have reduced loss from the metal-substrate interface, but did not address the primary source of loss in these fluxonium qubits.",
+      "published": "2026-03-24",
+      "authors": [
+        "Kate Azar",
+        "Lamia Ateshian",
+        "Mallika T. Randeria",
+        "Renée DePencier Piñero",
+        "Jeffrey M. Gertler",
+        "Junyoung An",
+        "Felipe Contipelli",
+        "Leon Ding",
+        "Michael Gingras",
+        "Kevin Grossklaus",
+        "Max Hays",
+        "Thomas M. Hazard",
+        "Junghyun Kim",
+        "Bethany M. Niedzielski",
+        "Hannah Stickler",
+        "Kunal L. Tiwari",
+        "Helin Zhang",
+        "Jeffrey A. Grover",
+        "Jonilyn L. Yoder",
+        "Mollie E. Schwartz",
+        "William D. Oliver",
+        "Kyle Serniak"
+      ],
+      "categories": [
+        "quant-ph",
+        "cond-mat.mes-hall"
+      ],
+      "url": "http://arxiv.org/abs/2603.23636v1"
+    },
+    {
+      "source": "arxiv",
+      "id": "http://arxiv.org/abs/2603.22578v2",
+      "title": "Benchmarking Dual-Polarization Silicon Nitride Photonic Integrated Circuits for Trapped-Ion Quantum Technologies",
+      "summary": "Trapped ions are one of the most advanced platforms for quantum technologies, with applications ranging from quantum computing to precision timekeeping. A crucial step towards more compact and scalable systems involves integrating photonic integrated circuits (PICs) into surface ion traps to enable on-chip light delivery and optical addressing of individual ions. Currently, most implementations rely solely on transverse-electric (TE) mode grating couplers, where the emitted light is polarized in the plane of the chip. In this work, we design, fabricate and characterize silicon nitride (Si\\(_3\\)N\\(_4\\)) PIC components, including incoupling structures, splitters, and grating couplers that support both TE and transverse-magnetic (TM) modes with comparable optical losses. We benchmark the PIC at 760\\,nm, which is a typical wavelength for Yb$^{+}$-applications. The fabricated grating couplers enable the outcoupling of collimated free-space beams for both polarizations, exhibiting distinct emission angles. This dual-polarization capability gives more flexibility in polarization control and expands the accessible optical design space for trapped-ion quantum technologies.",
+      "published": "2026-03-23",
+      "authors": [
+        "Carl-Frederik Grimpe",
+        "Anastasiia Lüßmann-Sorokina",
+        "Guochun Du",
+        "Pragya Sah",
+        "Steffen Sauer",
+        "Elena Jordan",
+        "Rijil Thomas",
+        "Pascal Gehrmann",
+        "Maksim Lipkin",
+        "Stephan Suckow",
+        "Max C. Lemme",
+        "Stefanie Kroker",
+        "Tanja E. Mehlstäubler"
+      ],
+      "categories": [
+        "physics.optics"
+      ],
+      "url": "http://arxiv.org/abs/2603.22578v2"
+    }
+  ]
+}

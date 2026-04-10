@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-论文抓取器 - 支持多数据源
+论文抓取器 - 支持多数据源和代理
 - arXiv: AI/ML、新能源、半导体
 - PubMed: 医疗
 - Semantic Scholar: 金融、消费、游戏
@@ -14,6 +14,25 @@ import time
 import os
 from datetime import datetime
 from typing import List, Dict
+
+# 代理配置
+PROXY = os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY') or ''
+PROXY_HANDLER = urllib.request.ProxyHandler({
+    'http': PROXY,
+    'https': PROXY,
+}) if PROXY else urllib.request.ProxyHandler({})
+
+
+def fetch_with_proxy(url: str, timeout: int = 30) -> str:
+    """使用代理获取 URL 内容"""
+    proxy_handler = PROXY_HANDLER
+    opener = urllib.request.build_opener(proxy_handler)
+    try:
+        with opener.open(url, timeout=timeout) as response:
+            return response.read().decode('utf-8')
+    except Exception as e:
+        raise Exception(f"请求失败: {e}")
+
 
 class PaperFetcher:
     def __init__(self, config_path: str = "config/industries.yaml"):
@@ -31,22 +50,22 @@ class PaperFetcher:
 
         for cat in categories:
             # 构建查询
-            query = f"cat:{cat}"
+            query_parts = [f"cat:{cat}"]
             if keywords:
-                query += "+AND+(" + "+OR+".join(keywords) + ")"
+                query_parts.append("+OR+".join(keywords))
+            query = "+AND+".join(query_parts)
 
-            url = f"https://export.arxiv.org/api/query?search_query={query}&start=0&max_results={max_results}&sortBy=submittedDate&sortOrder=descending"
+            encoded_query = urllib.parse.quote(query, safe='')
+            url = f"https://export.arxiv.org/api/query?search_query={encoded_query}&start=0&max_results={max_results}&sortBy=submittedDate&sortOrder=descending"
 
             try:
-                with urllib.request.urlopen(url, timeout=30) as response:
-                    content = response.read().decode('utf-8')
-
+                content = fetch_with_proxy(url)
                 root = ET.fromstring(content)
                 ns = {'atom': 'http://www.w3.org/2005/Atom', 'arxiv': 'http://arxiv.org/schemas/atom'}
 
                 for entry in root.findall('atom:entry', ns):
                     paper = {
-                        'source': 'arxiv',
+                        'source': 'arXiv',
                         'id': entry.find('atom:id', ns).text,
                         'title': entry.find('atom:title', ns).text.strip().replace('\n', ' '),
                         'summary': entry.find('atom:summary', ns).text.strip().replace('\n', ' '),
@@ -57,9 +76,9 @@ class PaperFetcher:
                     }
                     papers.append(paper)
             except Exception as e:
-                print(f"  [!] arXiv error for {cat}: {e}")
+                print(f"  [!] arXiv 错误 ({cat}): {e}")
 
-            time.sleep(1)  # 避免请求过快
+            time.sleep(0.5)  # 避免请求过快
 
         return papers
 
@@ -71,27 +90,26 @@ class PaperFetcher:
         search_url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term={urllib.parse.quote(query)}&retmax={max_results}&sort=date"
 
         try:
-            with urllib.request.urlopen(search_url, timeout=30) as response:
-                root = ET.fromstring(response.read())
-                ids = [id_elem.text for id_elem in root.findall('.//Id')]
+            content = fetch_with_proxy(search_url)
+            root = ET.fromstring(content)
+            ids = [id_elem.text for id_elem in root.findall('.//Id')]
 
             if not ids:
                 return []
 
             # 获取详情
             fetch_url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id={','.join(ids)}&retmode=json"
-
-            with urllib.request.urlopen(fetch_url, timeout=30) as response:
-                data = json.loads(response.read())
+            content = fetch_with_proxy(fetch_url)
+            data = json.loads(content)
 
             for id_val in ids:
                 if id_val in data.get('result', {}):
                     r = data['result'][id_val]
                     paper = {
-                        'source': 'pubmed',
+                        'source': 'PubMed',
                         'id': f"pubmed:{id_val}",
                         'title': r.get('title', ''),
-                        'summary': r.get('abstract', '') or 'No abstract available',
+                        'summary': r.get('abstract', '') or '无摘要',
                         'published': r.get('pubdate', '')[:10] if r.get('pubdate') else '',
                         'authors': [a.get('name', '') for a in r.get('authors', [])],
                         'journal': r.get('source', ''),
@@ -99,9 +117,9 @@ class PaperFetcher:
                     }
                     papers.append(paper)
 
-            time.sleep(1)
+            time.sleep(0.5)
         except Exception as e:
-            print(f"  [!] PubMed error: {e}")
+            print(f"  [!] PubMed 错误: {e}")
 
         return papers
 
@@ -114,15 +132,15 @@ class PaperFetcher:
 
             try:
                 req = urllib.request.Request(url, headers={'Accept': 'application/json'})
-                with urllib.request.urlopen(req, timeout=30) as response:
-                    data = json.loads(response.read())
+                content = fetch_with_proxy(url)
+                data = json.loads(content)
 
                 for item in data.get('data', []):
                     paper = {
-                        'source': 'semantic_scholar',
+                        'source': 'Semantic Scholar',
                         'id': item.get('paperId', ''),
                         'title': item.get('title', ''),
-                        'summary': item.get('abstract', '') or 'No abstract available',
+                        'summary': item.get('abstract', '') or '无摘要',
                         'published': str(item.get('year', '')),
                         'authors': [a.get('name', '') for a in item.get('authors', [])[:5]],
                         'journal': item.get('journal', '') or item.get('venue', ''),
@@ -130,7 +148,7 @@ class PaperFetcher:
                     }
                     papers.append(paper)
             except Exception as e:
-                print(f"  [!] Semantic Scholar error for '{query}': {e}")
+                print(f"  [!] Semantic Scholar 错误 ('{query}'): {e}")
 
             time.sleep(1)
 
@@ -142,7 +160,7 @@ class PaperFetcher:
 
         for industry in self.config['industries']:
             name = industry['name']
-            print(f"\n[*] Fetching {name}...")
+            print(f"\n[*] 正在抓取 {name}...")
 
             papers = []
             keywords = industry.get('keywords', [])
@@ -155,7 +173,7 @@ class PaperFetcher:
                     self.config['settings']['papers_per_industry']
                 )
                 papers.extend(arxiv_papers)
-                print(f"    arXiv: {len(arxiv_papers)} papers")
+                print(f"    arXiv: {len(arxiv_papers)} 篇")
 
             # PubMed
             if 'pubmed_query' in industry:
@@ -164,7 +182,7 @@ class PaperFetcher:
                     self.config['settings']['papers_per_industry']
                 )
                 papers.extend(pubmed_papers)
-                print(f"    PubMed: {len(pubmed_papers)} papers")
+                print(f"    PubMed: {len(pubmed_papers)} 篇")
 
             # Semantic Scholar
             if 'semantic_scholar_queries' in industry:
@@ -173,7 +191,7 @@ class PaperFetcher:
                     self.config['settings']['papers_per_industry']
                 )
                 papers.extend(ss_papers)
-                print(f"    Semantic Scholar: {len(ss_papers)} papers")
+                print(f"    Semantic Scholar: {len(ss_papers)} 篇")
 
             # 去重
             seen = set()
@@ -184,7 +202,7 @@ class PaperFetcher:
                     unique_papers.append(p)
 
             all_papers[name] = unique_papers
-            print(f"    Total: {len(unique_papers)} unique papers")
+            print(f"    共获取: {len(unique_papers)} 篇唯一论文")
 
         return all_papers
 
@@ -204,11 +222,12 @@ class PaperFetcher:
                     'papers': paper_list
                 }, f, ensure_ascii=False, indent=2)
 
-        print(f"\n[+] Saved papers to {output_dir}")
+        print(f"\n[+] 论文已保存到 {output_dir}")
 
 
 if __name__ == '__main__':
+    print(f"[*] 论文抓取器启动 (代理: {PROXY or '无'})")
     fetcher = PaperFetcher()
     papers = fetcher.fetch_all()
     fetcher.save_papers(papers)
-    print("\n[+] Fetch complete!")
+    print("\n[+] 抓取完成!")

@@ -18,6 +18,25 @@ try:
 except ImportError:
     HAS_BS4 = False
 
+# 代理配置
+PROXY = os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY') or ''
+PROXY_HANDLER = urllib.request.ProxyHandler({
+    'http': PROXY,
+    'https': PROXY,
+}) if PROXY else urllib.request.ProxyHandler({})
+
+def fetch_with_proxy(url: str, headers: dict = None, timeout: int = 30) -> str:
+    """使用代理获取 URL 内容"""
+    req = urllib.request.Request(url, headers=headers or {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
+    })
+    opener = urllib.request.build_opener(PROXY_HANDLER)
+    try:
+        with opener.open(req, timeout=timeout) as response:
+            return response.read().decode('utf-8')
+    except Exception as e:
+        raise Exception(f"请求失败: {e}")
+
 
 class GitHubFetcher:
     """GitHub Trending 爬虫"""
@@ -78,11 +97,7 @@ class GitHubFetcher:
         projects = []
 
         try:
-            req = urllib.request.Request(url, headers={
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
-            })
-            with urllib.request.urlopen(req, timeout=30) as response:
-                html = response.read().decode('utf-8')
+            html = fetch_with_proxy(url)
 
             soup = BeautifulSoup(html, 'html.parser')
             articles = soup.select('article.Box-row')
@@ -167,9 +182,8 @@ class GitHubFetcher:
         url = f"https://api.github.com/search/repositories?q={urllib.parse.quote(query)}&sort=stars&order=desc&per_page=30"
 
         try:
-            req = urllib.request.Request(url, headers=self.headers)
-            with urllib.request.urlopen(req, timeout=30) as response:
-                data = json.loads(response.read())
+            content = fetch_with_proxy(url, headers=self.headers)
+            data = json.loads(content)
 
             projects = []
             for item in data.get('items', []):
