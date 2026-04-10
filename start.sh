@@ -137,7 +137,8 @@ run_continuous() {
 ╚══════════════════════════════════════════════════════════════╝
     """
 
-    # 先构建 Hugo 网站（确保 public 目录存在）
+    # 确保 public 目录存在（Hugo 构建）
+    mkdir -p "$SCRIPT_DIR/hugo_site/public"
     echo "[*] 初始构建 Hugo 网站..."
     do_build_hugo
 

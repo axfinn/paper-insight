@@ -23,7 +23,31 @@ if [ ! -f "docker-compose.yml" ]; then
     exit 1
 fi
 
-# ─── 2. 检查 Docker ───
+# ─── 2. 检查并创建必要文件 ───
+echo "[*] 检查配置文件..."
+
+# 创建 .env 文件
+if [ ! -f ".env" ]; then
+    if [ -f ".env.example" ]; then
+        echo "[*] 创建 .env 文件..."
+        cp .env.example .env
+        echo "[!] 请编辑 .env 文件填入 ANTHROPIC_AUTH_TOKEN"
+    else
+        echo "[*] 创建默认 .env 文件..."
+        cat > .env << 'EOF'
+# MiniMax API 配置
+ANTHROPIC_AUTH_TOKEN=your-api-key-here
+ANTHROPIC_BASE_URL=https://api.minimaxi.com/anthropic
+ANTHROPIC_MODEL=MiniMax-M2.7
+API_TIMEOUT_MS=3000000
+EOF
+    fi
+fi
+
+# 创建必要目录
+mkdir -p papers reports github logs data autodev_workspace hugo_site/public
+
+# ─── 3. 检查 Docker ───
 if ! command -v docker &> /dev/null; then
     echo "[*] 安装 Docker..."
     curl -fsSL https://get.docker.com | sh
@@ -37,7 +61,7 @@ if ! command -v docker-compose &> /dev/null && ! docker compose version &> /dev/
     chmod +x /usr/local/bin/docker-compose
 fi
 
-# ─── 3. 启动 ───
+# ─── 4. 启动 ───
 echo "[*] 启动 Paper Insight..."
 
 # 使用 docker compose (新版) 或 docker-compose (旧版)
@@ -50,17 +74,15 @@ else
     exit 1
 fi
 
-# ─── 4. 完成 ───
+# ─── 5. 完成 ───
 echo """
 ╔══════════════════════════════════════════════════════════════╗
 ║              ✅ 部署完成                                       ║
 ╠══════════════════════════════════════════════════════════════╣
 ║                                                              ║
-║  查看日志: docker-compose logs -f                             ║
-║  停止服务: docker-compose down                                ║
+║  查看日志: docker compose logs -f                            ║
+║  停止服务: docker compose down                               ║
 ║                                                              ║
-║  报告目录: ./reports/                                        ║
-║  网站目录: ./hugo_site/public/                               ║
-║                                                              ║
+║  访问: http://localhost:8084                                  ║
 ╚══════════════════════════════════════════════════════════════╝
 """
