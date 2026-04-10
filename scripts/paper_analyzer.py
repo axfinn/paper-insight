@@ -154,8 +154,15 @@ def analyze_industry_papers(industry: str, papers: list, api_key: str = None) ->
 def generate_report(industry: str, papers: list) -> str:
     """生成 Markdown 报告"""
 
-    # 按评分排序
-    sorted_papers = sorted(papers, key=lambda x: x.get('rating', 0), reverse=True)
+    # 按评分排序（rating 可能是字符串）
+    def get_rating(p):
+        r = p.get('rating', 0)
+        try:
+            return int(r)
+        except (TypeError, ValueError):
+            return 0
+
+    sorted_papers = sorted(papers, key=get_rating, reverse=True)
 
     # 统计
     total = len(papers)
