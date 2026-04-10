@@ -137,6 +137,15 @@ run_continuous() {
 ╚══════════════════════════════════════════════════════════════╝
     """
 
+    # 启动静态文件服务器（后台运行）
+    echo "[*] 启动静态文件服务器 :8084 ..."
+    python3 -m http.server 8084 --directory "$SCRIPT_DIR/hugo_site/public" &
+    SERVER_PID=$!
+    echo "[*] 服务器 PID: $SERVER_PID"
+
+    # 等待服务器就绪
+    sleep 2
+
     while true; do
         timestamp=$(date '+%Y-%m-%d %H:%M:%S')
         echo "[$timestamp] === 开始抓取 ==="
@@ -179,6 +188,15 @@ run_autodev_loop() {
 
     # 创建 autodev 工作区
     mkdir -p "$AUTODEV_WORKSPACE"
+
+    # 启动静态文件服务器（后台运行）
+    echo "[*] 启动静态文件服务器 :8084 ..."
+    python3 -m http.server 8084 --directory "$SCRIPT_DIR/hugo_site/public" &
+    SERVER_PID=$!
+    echo "[*] 服务器 PID: $SERVER_PID"
+
+    # 等待服务器就绪
+    sleep 2
 
     while true; do
         timestamp=$(date '+%Y-%m-%d %H:%M:%S')

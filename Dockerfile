@@ -52,5 +52,5 @@ USER appuser
 # 暴露端口
 EXPOSE 8084
 
-# 默认运行持续模式（抓取 + 分析 + 构建网站）
-CMD ["./start.sh", "continuous"]
+# 默认运行 autodev 模式
+CMD ["./start.sh", "autodev"]
