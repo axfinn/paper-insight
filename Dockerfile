@@ -18,7 +18,8 @@ RUN wget -q https://github.com/gohugoio/hugo/releases/download/v0.123.0/hugo_0.1
     tar -xzf hugo_0.123.0_linux-amd64.tar.gz -C /tmp && \
     mv /tmp/hugo /usr/local/bin/hugo && \
     rm -f /tmp/hugo_0.123.0_linux-amd64.tar.gz && \
-    chmod +x /usr/local/bin/hugo
+    chmod +x /usr/local/bin/hugo && \
+    hugo version
 
 # 安装 Claude Code CLI (Linux)
 RUN npm install -g @anthropic-ai/claude-code && \
