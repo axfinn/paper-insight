@@ -68,20 +68,12 @@ do_fetch_github() {
 # ─── 生成论文报告 ───
 do_analyze_papers() {
     echo "[*] AI 分析论文..."
-    # 使用 autodev 分析论文
-    ./clawtest/autodev/autodev "分析今日论文情报，生成各行业报告" \
-        --path /tmp/paper-insight/papers \
-        --publish 2>/dev/null || \
     python3 scripts/paper_analyzer.py
 }
 
 # ─── 生成 GitHub 报告 ───
 do_analyze_github() {
     echo "[*] AI 分析 GitHub 项目..."
-    # 使用 autodev 分析 GitHub
-    ./clawtest/autodev/autodev "分析今日 GitHub Trending 项目，生成排行榜报告" \
-        --path /tmp/paper-insight/github \
-        --publish 2>/dev/null || \
     python3 scripts/github_analyzer.py --all
 }
 
@@ -146,28 +138,18 @@ run_continuous() {
 
 # ─── Autodev 自主迭代模式 ───
 run_autodev_loop() {
-    install_autodev  # 先确保 autodev 已安装
-
-    PROJECT_DIR="/tmp/paper-insight/improve"
-
-    mkdir -p "$PROJECT_DIR"
-
     echo """
 ╔══════════════════════════════════════════════════════════════╗
-║              Paper Insight + AutoDev 自主迭代                 ║
+║              Paper Insight + AutoDev 任务模式                 ║
 ║                                                              ║
-║  用途: 改进项目本身（优化爬虫、分析逻辑、添加新功能）           ║
-║  采集任务由 continuous 模式处理                              ║
+║  运行: 抓取 + AI 分析 + 生成报告（持续循环）                   ║
 ║                                                              ║
-║  停止方式: ./clawtest/autodev/autodev-stop $PROJECT_DIR      ║
+║  停止: Ctrl+C                                               ║
 ╚══════════════════════════════════════════════════════════════╝
     """
 
-    # 初始任务 - 明确边界，专注于项目改进
-    TASK="改进 Paper Insight 项目：优化 scripts/ 下的爬虫和分析逻辑，提高报告质量，添加新功能（如自动摘要、趋势预测）。项目位于 {SCRIPT_DIR}"
-
-    cd "$SCRIPT_DIR/clawtest/autodev"
-    ./autodev "$TASK" --path "$PROJECT_DIR" --loop --publish --build
+    # 直接运行 continuous 模式的任务（使用 MiniMax API 分析）
+    run_continuous
 }
 
 # ─── 使用说明 ───
@@ -178,7 +160,7 @@ Paper Insight - 论文情报站 + GitHub Trending 分析
 用法:
     ./start.sh once         单次运行（抓取 + 分析 + 构建网站）
     ./start.sh continuous   持续运行（定时抓取 + 分析 + 构建网站）
-    ./start.sh autodev      AutoDev 自主迭代模式（推荐）
+    ./start.sh autodev      AutoDev 任务模式（持续抓取 + AI 分析）
     ./start.sh hugo         仅构建 Hugo 网站
     ./start.sh cleanup      仅执行磁盘清理
 
