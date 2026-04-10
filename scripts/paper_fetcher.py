@@ -74,7 +74,9 @@ class PaperFetcher:
             url = f"https://export.arxiv.org/api/query?search_query={encoded_query}&start=0&max_results={max_results}&sortBy=submittedDate&sortOrder=descending"
 
             try:
-                content = fetch_with_proxy(url)
+                content, _, _ = fetch_with_proxy(url)
+                if not content:
+                    continue
                 root = ET.fromstring(content)
                 ns = {'atom': 'http://www.w3.org/2005/Atom', 'arxiv': 'http://arxiv.org/schemas/atom'}
 
@@ -105,7 +107,9 @@ class PaperFetcher:
         search_url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term={urllib.parse.quote(query)}&retmax={max_results}&sort=date"
 
         try:
-            content = fetch_with_proxy(search_url)
+            content, _, _ = fetch_with_proxy(search_url)
+            if not content:
+                return []
             root = ET.fromstring(content)
             ids = [id_elem.text for id_elem in root.findall('.//Id')]
 
@@ -114,7 +118,9 @@ class PaperFetcher:
 
             # 获取详情
             fetch_url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id={','.join(ids)}&retmode=json"
-            content = fetch_with_proxy(fetch_url)
+            content, _, _ = fetch_with_proxy(fetch_url)
+            if not content:
+                return []
             data = json.loads(content)
 
             for id_val in ids:
@@ -146,8 +152,9 @@ class PaperFetcher:
             url = f"https://api.semanticscholar.org/graph/v1/paper/search?query={urllib.parse.quote(query)}&limit={max_results}&sort=publicationDate:desc&fields=title,abstract,year,authors,journal,venue,url"
 
             try:
-                req = urllib.request.Request(url, headers={'Accept': 'application/json'})
-                content = fetch_with_proxy(url)
+                content, _, _ = fetch_with_proxy(url)
+                if not content:
+                    continue
                 data = json.loads(content)
 
                 for item in data.get('data', []):
@@ -241,7 +248,8 @@ class PaperFetcher:
 
 
 if __name__ == '__main__':
-    print(f"[*] 论文抓取器启动 (代理: {PROXY or '无'})")
+    proxy_info = str(get_proxy_config()) if HAS_PROXY else (PROXY or '无')
+    print(f"[*] 论文抓取器启动 (代理: {proxy_info})")
     fetcher = PaperFetcher()
     papers = fetcher.fetch_all()
     fetcher.save_papers(papers)

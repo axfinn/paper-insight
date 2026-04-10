@@ -1,167 +1,173 @@
 {
   "industry": "医疗健康",
-  "fetched_at": "2026-04-10T14:13:25.945314",
+  "fetched_at": "2026-04-10T19:03:08.182100",
   "papers": [
     {
-      "source": "pubmed",
-      "id": "pubmed:41957670",
-      "title": "The acceptability, adherence, and preliminary effectiveness of a digital treatment for adolescents with subthreshold eating disorders. Findings from an open feasibility trial in routine clinical care.",
-      "summary": "No abstract available",
-      "published": "2026 Apr 9",
+      "source": "PubMed",
+      "id": "pubmed:41960642",
+      "title": "Unveiling Epigenetic Molecular Mechanisms in Bone Fracture Risk: Insights From 731 Immune Cells, 1400 Metabolites, and Critical Genetic Pathways.",
+      "summary": "无摘要",
+      "published": "2026",
       "authors": [
-        "Holgersen G",
-        "Nordby ES",
-        "Espeset EMS",
-        "Nordgreen T"
+        "Wan X",
+        "Lu W",
+        "Xue J",
+        "Huang J",
+        "Qian W",
+        "Hu Z",
+        "You W",
+        "Zhang Y"
       ],
-      "journal": "J Eat Disord",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41957670/"
+      "journal": "Mediators Inflamm",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41960642/"
     },
     {
-      "source": "pubmed",
-      "id": "pubmed:41957637",
-      "title": "If you build it who will come? Widening access through a place-based Rural Training Stream to address local medical workforce shortages.",
-      "summary": "No abstract available",
-      "published": "2026 Apr 9",
+      "source": "PubMed",
+      "id": "pubmed:41960625",
+      "title": "Mineralocorticoid Receptor Antagonist Discontinuation in Adrenal Venous Sampling for Subtyping Patients With Primary Hyperaldosteronism: A Systematic Review and Meta-Analysis.",
+      "summary": "无摘要",
+      "published": "2026 Apr 1",
       "authors": [
-        "Fuller L",
-        "Deakin JB",
-        "Gray L",
-        "McGrail M"
+        "Pérez-Soto RH",
+        "Ghani A",
+        "Bauzon J",
+        "Romero-Velez G",
+        "Lui M",
+        "León-Ballesteros GP",
+        "Berber E"
       ],
-      "journal": "BMC Med Educ",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41957637/"
+      "journal": "Clin Endocrinol (Oxf)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41960625/"
     },
     {
-      "source": "pubmed",
-      "id": "pubmed:41957635",
-      "title": "Financial toxicity and psychosocial distress of breast and cervical cancer patients at a tertiary healthcare facility in south-western Nigeria.",
-      "summary": "No abstract available",
-      "published": "2026 Apr 9",
+      "source": "PubMed",
+      "id": "pubmed:41960620",
+      "title": "A Qualitative Study on TPB-Based Factors for Breastfeeding Cessation in Women With Gestational Diabetes Mellitus in the Early Postpartum Period.",
+      "summary": "无摘要",
+      "published": "2026",
       "authors": [
-        "Busari DA",
-        "Ntekim A",
-        "John-Akinola YO",
-        "Adejumo PO",
-        "Huo D",
-        "Olopade OI",
-        "Oluwasanu MM"
+        "Jiang X",
+        "Jiang H",
+        "Huang R"
       ],
-      "journal": "BMC Womens Health",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41957635/"
+      "journal": "J Pregnancy",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41960620/"
     },
     {
-      "source": "pubmed",
-      "id": "pubmed:41957624",
-      "title": "Professional support to improve rural medical workforce retention, what works in what context: a realist evaluation.",
-      "summary": "No abstract available",
-      "published": "2026 Apr 9",
+      "source": "PubMed",
+      "id": "pubmed:41960619",
+      "title": "Effect of Local Anesthesia at the Bone Collection Site of Iliac Bone Grafting on Autonomic Nervous System Activity and Circulatory Dynamics in Alveolar Cleft Treatment.",
+      "summary": "无摘要",
+      "published": "2026",
       "authors": [
-        "O'Sullivan B",
-        "Battye K",
-        "Roczo D"
+        "Yamashita K",
+        "Yoshimine S",
+        "Uto A",
+        "Uchino M",
+        "Kibe T",
+        "Sugimura M"
       ],
-      "journal": "Hum Resour Health",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41957624/"
+      "journal": "Pain Res Manag",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41960619/"
     },
     {
-      "source": "pubmed",
-      "id": "pubmed:41957617",
-      "title": "Assessing the accuracy and educational value of ChatGPT-generated content for core topics in cardiology: a descriptive analysis at Selçuk University Cardiology Clinic.",
-      "summary": "No abstract available",
-      "published": "2026 Apr 9",
+      "source": "PubMed",
+      "id": "pubmed:41960615",
+      "title": "Comparing the Prognosis of Non-Small Cell Lung Cancer Patients Who Did Not Undergo Surgery After Neoadjuvant Chemotherapy Combined With Immunotherapy: A Retrospective Study.",
+      "summary": "无摘要",
+      "published": "2026 Apr",
       "authors": [
-        "Tezcan H",
-        "Tunçez A",
-        "Gürses KM",
-        "Özen Y",
-        "Yalçın MU"
+        "Ma Z",
+        "Wu Y",
+        "Ji G",
+        "Zhou Z",
+        "Wang X",
+        "Wang J",
+        "Liu W",
+        "Deng L",
+        "Wang W",
+        "Yi J",
+        "Bi N",
+        "Zhang T"
       ],
-      "journal": "BMC Med Educ",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41957617/"
+      "journal": "Thorac Cancer",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41960615/"
     },
     {
-      "source": "pubmed",
-      "id": "pubmed:41957601",
-      "title": "Teaching radiology in undergraduate programmes in medical schools in francophone sub-Saharan Africa : a multicenter survey.",
-      "summary": "No abstract available",
-      "published": "2026 Apr 9",
+      "source": "PubMed",
+      "id": "pubmed:41960613",
+      "title": "ICU Nurses' Perspectives on Artificial Intelligence in Adult Intensive Care Units: Knowledge, Attitudes and Job-Security Concerns.",
+      "summary": "无摘要",
+      "published": "2026 May",
       "authors": [
-        "Gbande P",
-        "Tamekloe TAK",
-        "Tchaou M",
-        "Sonhaye L",
-        "Agoda-Koussema LK",
-        "Adjenou K"
+        "Sayed ZA",
+        "Alnjadat R",
+        "Khwaldeh A",
+        "Alqudah LMM"
       ],
-      "journal": "BMC Med Educ",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41957601/"
+      "journal": "Nurs Crit Care",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41960613/"
     },
     {
-      "source": "pubmed",
-      "id": "pubmed:41957598",
-      "title": "Assessment of antibiotic stewardship knowledge, attitudes, and prescribing preparedness among medical, pharmacy, and dental students in Kuwait.",
-      "summary": "No abstract available",
-      "published": "2026 Apr 9",
+      "source": "PubMed",
+      "id": "pubmed:41960596",
+      "title": "Using the readiness assessment for pragmatic trials (RAPT) model to structure partner engagement and strengthen pragmatic research readiness.",
+      "summary": "无摘要",
+      "published": "2026",
       "authors": [
-        "Alghanem SS",
-        "Taqi A",
-        "Alzemami SW",
-        "Awad A"
+        "Baier RR",
+        "Serina PT",
+        "Reddy A",
+        "Stanislawski A",
+        "Hunkins N",
+        "McCreedy E"
       ],
-      "journal": "BMC Med Educ",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41957598/"
+      "journal": "J Clin Transl Sci",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41960596/"
     },
     {
-      "source": "pubmed",
-      "id": "pubmed:41957591",
-      "title": "Facilitators and barriers to rehabilitation exercise adherence among patients after total hip and total knee arthroplasty: a qualitative meta-synthesis.",
-      "summary": "No abstract available",
-      "published": "2026 Apr 9",
+      "source": "PubMed",
+      "id": "pubmed:41960587",
+      "title": "Exploring occupational therapy interventions in homeless settings in Tshwane.",
+      "summary": "无摘要",
+      "published": "2026",
       "authors": [
-        "Chen N",
-        "Yuan X",
-        "Yin Y",
-        "Chen Y"
+        "Ainsworth S",
+        "Lister HE",
+        "Janse van Rensburg MNS"
       ],
-      "journal": "BMC Musculoskelet Disord",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41957591/"
+      "journal": "Health SA",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41960587/"
     },
     {
-      "source": "pubmed",
-      "id": "pubmed:41957580",
-      "title": "Whole-genome analysis of a multidrug-resistant Klebsiella michiganensis environmental isolate from an orthopedic ward in Mwanza, Tanzania reveals IncF-family plasmid replicon signatures associated with resistance determinants.",
-      "summary": "No abstract available",
-      "published": "2026 Apr 9",
+      "source": "PubMed",
+      "id": "pubmed:41960586",
+      "title": "Caught between rights and realities: Nurses' challenges with upholding patients' rights in selected health facilities of South Africa.",
+      "summary": "无摘要",
+      "published": "2026",
       "authors": [
-        "Mboowa G",
-        "Kidenya BR",
-        "Sserwadda I",
-        "Kanyerezi S",
-        "Seni J"
+        "Thema AM",
+        "Mulaudzi FM",
+        "Lavhelani NR",
+        "Nyandeni S",
+        "Musie MR"
       ],
-      "journal": "BMC Genomics",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41957580/"
+      "journal": "Health SA",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41960586/"
     },
     {
-      "source": "pubmed",
-      "id": "pubmed:41957578",
-      "title": "Multi-stakeholder disaster healthcare training as a figurine-based tabletop simulation in coastal Karnataka, India: a kinesthetic teaching-learning experience.",
-      "summary": "No abstract available",
-      "published": "2026 Apr 9",
+      "source": "PubMed",
+      "id": "pubmed:41960585",
+      "title": "Comparison of treatment outcomes of adolescents on HIV treatment before and during the coronavirus disease 2019 pandemic in Cape Town, South Africa: A retrospective cohort study.",
+      "summary": "无摘要",
+      "published": "2026",
       "authors": [
-        "Hebbar A",
-        "Srivastava SK",
-        "Sirur FM",
-        "T R A",
-        "Prakash P",
-        "B N L",
-        "Bhat A",
-        "Balakrishnan JM",
-        "Sudhi M"
+        "Khan N",
+        "van Wyk B",
+        "Crowley T"
       ],
-      "journal": "Int J Emerg Med",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41957578/"
+      "journal": "Health SA",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41960585/"
     }
   ]
 }

@@ -80,7 +80,7 @@ def analyze_paper(paper: dict, industry: str, api_key: str = None) -> dict:
     try:
         response = client.messages.create(
             model=config['model'],
-            max_tokens=1024,
+            max_tokens=8192,
             messages=[{"role": "user", "content": prompt}]
         )
 
@@ -109,7 +109,32 @@ def analyze_paper(paper: dict, industry: str, api_key: str = None) -> dict:
 
         result = json.loads(text)
         return {**paper, **result, 'analyzed': True}
+    except json.JSONDecodeError as e:
+        # JSON 解析失败，尝试修复截断的 JSON
+        if '"' in str(e) or "'" in str(e):
+            # 可能输出被截断，尝试修复
+            try:
+                # 找到最后一个完整的字段
+                text_trimmed = text[:e.pos] if e.pos else text
+                # 尝试补全字符串
+                text_trimmed = text_trimmed.rsplit(',', 1)[0]
+                # 尝试补全对象
+                brace_count = text_trimmed.count('{') - text_trimmed.count('}')
+                if brace_count > 0:
+                    text_trimmed += '}' * brace_count
+                result = json.loads(text_trimmed)
+                return {**paper, **result, 'analyzed': True, 'truncated': True}
+            except:
+                pass
+        print(f"  [!] JSON 解析错误: {e}")
+        return {**paper, 'analyzed': False, 'error': f'JSONDecodeError: {e}'}
     except Exception as e:
+        err_str = str(e)
+        if '529' in err_str or 'overloaded' in err_str.lower():
+            print(f"  [!] API 过载，等待后重试...")
+            import time
+            time.sleep(5)
+            return analyze_paper(paper, industry, api_key)  # 重试一次
         print(f"  [!] Analysis error: {e}")
         return {**paper, 'analyzed': False, 'error': str(e)}
 

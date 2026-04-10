@@ -1,5 +1,172 @@
 {
   "industry": "消费/电商",
-  "fetched_at": "2026-04-10T14:13:25.946551",
-  "papers": []
+  "fetched_at": "2026-04-10T19:03:08.183855",
+  "papers": [
+    {
+      "source": "Semantic Scholar",
+      "id": "d3728c8a4b6133b0eb8b6da705e12366fe63e87e",
+      "title": "Beyond e-commerce retail consumer attitudes and behavioral",
+      "summary": "无摘要",
+      "published": "None",
+      "authors": [],
+      "journal": "",
+      "url": "https://www.semanticscholar.org/paper/d3728c8a4b6133b0eb8b6da705e12366fe63e87e"
+    },
+    {
+      "source": "Semantic Scholar",
+      "id": "530c950f4f6a19bdc1cda124249a7bf3bd12d706",
+      "title": "Transforming Online Retail: The Impact of Augmented and Virtual Reality on Consumer Engagement and Experience in E-Commerce",
+      "summary": "Purpose: This study investigates the transformative role of augmented reality (AR) and virtual reality (VR) technologies in e-commerce and digital marketing. It aims to understand how these immersive technologies enhance consumer experiences by addressing challenges such as product visualization, consumer trust, and engagement while fostering higher purchase intent and customer satisfaction. \nDesign/Method/Approach: A systematic literature review synthesizes findings from empirical and theoretical studies published between 2011 and 2024. The methodologies analyzed include experimental designs, market analyses, and conceptual frameworks assessing the integration of AR and VR technologies in online retail. \nFindings: The findings indicate that AR enhances online shopping through features such as virtual try-ons and spatial placement visualization, reducing return rates and increasing purchase confidence. VR, on the other hand, provides immersive environments that simulate physical shopping experiences, strengthening consumer-brand connections. While AR demonstrates broader applicability in fostering interactive and personalized experiences, VR remains limited by accessibility and cost constraints. Both technologies exhibit immediate costs but offer long-term benefits, positively influencing conversion rates and customer loyalty. \nTheoretical Implications: This study contributes to consumer behavior research by applying value perception models, immersive technology frameworks, and engagement metrics to the e-commerce landscape. It refines existing theoretical perspectives on technological adoption by highlighting the interplay between sensory engagement, emotional connection, and consumer decision-making. \nPractical Implications: The research underscores the strategic importance of integrating AR and VR into digital marketing and e-commerce platforms. It suggests leveraging AR for product categories requiring spatial interaction and using VR for high-detail product exploration. The study provides actionable insights for businesses looking to enhance online shopping experiences through immersive technologies. \nOriginality/Value: This study offers a comprehensive synthesis of AR and VR applications in e-commerce, highlighting their potential to reshape online shopping. By bridging the gap between physical and digital retail experiences, it provides a fresh perspective on how immersive technologies can drive engagement, accessibility, and personalized consumer interactions. \nResearch Limitations/Future Research: While this study synthesizes existing literature, empirical validation through longitudinal studies and cross-industry applications is necessary. Future research should explore the long-term effects of AR and VR adoption on consumer trust, loyalty, and behavioral changes. Additionally, further exploration is encouraged into gamification, artificial intelligence (AI) integration, and demographic-specific implementations to drive sustainable engagement.",
+      "published": "2025",
+      "authors": [
+        "Maria Nascimento Cunha",
+        "Oleksandr P. Krupsky"
+      ],
+      "journal": {
+        "name": "Uluslararası Sosyal Siyasal ve Mali Araştırmalar Dergisi"
+      },
+      "url": "https://www.semanticscholar.org/paper/530c950f4f6a19bdc1cda124249a7bf3bd12d706"
+    },
+    {
+      "source": "Semantic Scholar",
+      "id": "bf993ddd418da19b8e2f20423f112b1dbc0de9d8",
+      "title": "Research on e-commerce platform’s instant retail strategy considering delivery timeliness under consumer channel preferences",
+      "summary": "PurposeThe rapid growth of online shopping, fueled by technological advancements, has exposed the limitations of traditional e-commerce delivery in meeting evolving market demands. To maintain competitiveness, e-commerce platforms increasingly partner with local stores to offer instant retail services characterized by rapid online ordering, store-based fulfillment and delivery within hours. This paper aims to identify the optimal conditions for introducing instant retail and to develop balanced strategies that accommodate channel characteristics and consumer preferences, ensuring mutual benefits for all stakeholders.Design/methodology/approachThis research investigates strategies for integrating an instant channel into a platform retail system that includes online and offline channels. It quantifies consumer sensitivity to delivery timeliness and examines how delivery speed and consumer preferences influence channel interactions and equilibrium outcomes in terms of competition and cooperation.FindingsResults indicate that introducing an instant channel generally reduces prices across all platform retail channels, although its impact on profits remains uncertain. At moderate delivery speeds, the instant channel increases profitability for both the platform and physical retailers, with maximum profitability achieved through revenue-sharing mechanisms. At very high delivery speeds, both entities can still gain by targeting a smaller, highly time-sensitive consumer segment.Originality/valueThis paper quantifies consumer sensitivity to delivery timeliness and examines strategic implications arising from introducing an instant channel into e-commerce platforms. Through a rigorous analysis of competitive and cooperative channel dynamics, it provides valuable insights into consumer behavior, channel selection and the development of new retail models.",
+      "published": "2025",
+      "authors": [
+        "Meirong Tan",
+        "Hao Li",
+        "Hongwei Wang",
+        "P. Yin"
+      ],
+      "journal": {
+        "name": "Asia Pacific Journal of Marketing and Logistics"
+      },
+      "url": "https://www.semanticscholar.org/paper/bf993ddd418da19b8e2f20423f112b1dbc0de9d8"
+    },
+    {
+      "source": "Semantic Scholar",
+      "id": "a0131409daa8c98579c6970ab15239575a9c8c70",
+      "title": "Optimizing Operating Parameters of a Dual E-Commerce-Retail Sales Channel in a Closed-Loop Supply Chain",
+      "summary": "Currently, many consumers prefer online shopping via e-commerce platforms because of the shopping convenience and product diversity. Meanwhile, offline retailers provide retail services to cope with the competition from e-commerce platforms. Additionally, environment protection has been regarded to be equally important as economic growth in meeting the challenges of sustainable development goals. This work uses consumer utility selection theory to form the online and offline market demand functions in a dual-channel closed-loop supply chain considering consumers’ e-commerce preferences and retail services. Then, we further reveal the optimal system sales channel and coordination contract to acquire good economic and ecological benefits. We find the following: 1) As in practice, consumers’ e-commerce preferences and retail services simultaneously affect the purchasing and sales channels. 2) Since both consumers’ e-commerce preferences and retail service quality increase as service costs decreases, the recovery rate of used products increases, which contributes to improving the ecological benefits. 3) The “Double Marginalization” problem can reduce the operating efficiency of the decentralized system. Accordingly, we design a revenue-service cost sharing contract to solve this problem in a coordinated manner, and thus increase the economic and ecological benefits of the system. Consequently, all members can obtain profits in a win-win scenario by bargaining on the revenue rates and service costs.",
+      "published": "2020",
+      "authors": [
+        "Zongyu Mu",
+        "Xiaodong Liu",
+        "Ke Li"
+      ],
+      "journal": {
+        "name": "IEEE Access",
+        "pages": "180352-180369",
+        "volume": "8"
+      },
+      "url": "https://www.semanticscholar.org/paper/a0131409daa8c98579c6970ab15239575a9c8c70"
+    },
+    {
+      "source": "Semantic Scholar",
+      "id": "aa837ea4237246c076b9c49e23bf13eaf18d24df",
+      "title": "What Is the Value of Extrinsic Olive Oil Cues in Emerging Markets? Empirical Evidence from the U.S. E‐Commerce Retail Market",
+      "summary": "无摘要",
+      "published": "2016",
+      "authors": [
+        "L. Roselli",
+        "D. Carlucci",
+        "B. D. Gennaro"
+      ],
+      "journal": {
+        "name": "Agribusiness",
+        "pages": "329-342",
+        "volume": "32"
+      },
+      "url": "https://www.semanticscholar.org/paper/aa837ea4237246c076b9c49e23bf13eaf18d24df"
+    },
+    {
+      "source": "Semantic Scholar",
+      "id": "3bad520dec55dc9768980946187876bf88bad665",
+      "title": "Intelligent Group Recommendations for Metaverse E-Commerce Platforms for Enhanced Retail and Consumer Experiences",
+      "summary": "The advent of immersive social platforms introduces new challenges and opportunities for computational modeling of group dynamics and personalization of metaverse commerce. This research proposes an intelligent group recommender system (GRS) algorithm that analyze collective user behaviors and preferences to enhance customer shopping experiences. The proposed GRS integrates demographic-based clustering to determine user groups and then aggregates their preferences to generate tailored recommendations. We conduct a simulation case study to demonstrate the applicability of the proposed approach. The results show the GRS identifies heterogeneity within clusters based on demographics and product preferences. Our findings reveal that the integrated GRS in a metaverse commerce platform not only enhances the retailing experience by accurately matching products with group preferences but also provides actionable intelligence for businesses in crafting targeted strategies. This study advances the emerging field of intelligent recommender systems by integrating group modelling, preference aggregation, and immersive technologies to enable next-generation personalization and automation in e-commerce platforms.",
+      "published": "2025",
+      "authors": [
+        "M. Geda",
+        "Yukming Tang",
+        "C. Lee"
+      ],
+      "journal": {
+        "name": "IEEE Transactions on Consumer Electronics",
+        "pages": "11395-11405",
+        "volume": "71"
+      },
+      "url": "https://www.semanticscholar.org/paper/3bad520dec55dc9768980946187876bf88bad665"
+    },
+    {
+      "source": "Semantic Scholar",
+      "id": "b5e23bedc5b5ca5748499ab3692b122ee651bf4b",
+      "title": "Supply Chain Dynamics With Sensor Integration for Consumer Electronics in Retail and E-Commerce",
+      "summary": "In this innovative study, a cutting-edge dual-channel closed-loop supply chain model with sensor data integration for third-party recycling has been effectively developed. Our innovative study provides unmatched insights into the world of consumer electronics by examining the effects of fund management regulations and retail e-commerce participation on three different choice scenarios. The compelling results show that retail e-commerce, the revolutionary force in the retail industry, has a tangible impact on the pricing and profits of traditional brick-and-mortar stores. In response to this trend, the wholesale pricing strategies of consumer electronics manufacturers have been adapted to maximize profitability within the retail e-commerce landscape. Fascinatingly, the impact of retail e-commerce involvement remains impervious to the recycling decisions and optimal profits of third-party recyclers. In consumer electronics, fund-handling policies are crucial in boosting the number of product recoveries and driving up prices for businesses in the forward supply chain. Although manufacturers’ market share is affected by retail e-commerce, overall product demand is unaffected. On the other hand, putting fund-handling policies into place indicates a decline in overall market demand. This innovative study uses sensor integration to unlock the complex dynamics of the interesting field of digital supply chain management.",
+      "published": "2024",
+      "authors": [
+        "Anil Tiwari",
+        "Jeetu Sharma",
+        "Ansal Valappil",
+        "H. Fakhruldeen",
+        "A. Aziz"
+      ],
+      "journal": {
+        "name": "IEEE Transactions on Consumer Electronics",
+        "pages": "6846-6854",
+        "volume": "70"
+      },
+      "url": "https://www.semanticscholar.org/paper/b5e23bedc5b5ca5748499ab3692b122ee651bf4b"
+    },
+    {
+      "source": "Semantic Scholar",
+      "id": "91c113b759026c18975d99d2aec5a9ab816988f8",
+      "title": "A SYSTEMATIC REVIEW OF DEMAND FORECASTING MODELS FOR RETAIL E-COMMERCE ENHANCING ACCURACY IN INVENTORY AND DELIVERY PLANNING",
+      "summary": "In the rapidly evolving landscape of retail e-commerce, characterized by volatile consumer behavior, diverse product assortments, and fluctuating market conditions, demand forecasting has emerged as a critical strategic capability. Accurate demand forecasting not only underpins effective inventory management and delivery planning but also serves as a cornerstone for optimizing supply chain responsiveness, minimizing stockouts and overstock situations, and enhancing customer satisfaction. As e-commerce platforms increasingly embrace data-driven operations, the role of predictive analytics in shaping demand planning strategies has gained unprecedented prominence. This systematic review presents a comprehensive synthesis of 72 peer-reviewed academic articles, industry reports, and empirical case studies published between 2010 and 2024. The objective is to evaluate the breadth, depth, and evolution of demand forecasting methodologies specifically applied within the context of retail e-commerce. The selected studies were rigorously screened and categorized based on methodological foundations, technological sophistication, and practical applications. Four major categories of forecasting models are examined: (1) traditional statistical approaches, such as AutoRegressive Integrated Moving Average (ARIMA), Seasonal ARIMA (SARIMA), and exponential smoothing models; (2) machine learning techniques, including decision trees, random forests, support vector regression, and ensemble methods; (3) hybrid frameworks that integrate statistical modeling with machine learning or deep learning components; and (4) advanced deep learning architectures, particularly Long Short-Term Memory (LSTM) networks, Gated Recurrent Units (GRUs), Convolutional Neural Networks (CNNs), and transformer-based models. The findings reveal distinct performance advantages across model categories. Traditional statistical models demonstrate continued relevance in scenarios marked by stable demand patterns, short forecasting horizons, and limited data complexity. However, their limitations become evident when applied to highly nonlinear, sparse, or volatile datasets. In contrast, machine learning models offer enhanced adaptability and accuracy, especially in handling high-dimensional data environments with diverse product lines and unpredictable promotional impacts. Deep learning models further advance this capability by capturing complex temporal dynamics, long-range dependencies, and multivariate input streams. These models are particularly effective for SKU-level forecasting, where product-specific demand patterns fluctuate frequently and require real-time recalibration. Many reviewed studies adopted modular architectures that allow domain-specific tuning and facilitate deployment within enterprise resource planning (ERP) and inventory management systems.",
+      "published": "2025",
+      "authors": [
+        "A. R. Chowdhury",
+        "Rajesh Paul",
+        "Farhana Zaman Rozony"
+      ],
+      "journal": {
+        "name": "International Journal of Scientific Interdisciplinary Research"
+      },
+      "url": "https://www.semanticscholar.org/paper/91c113b759026c18975d99d2aec5a9ab816988f8"
+    },
+    {
+      "source": "Semantic Scholar",
+      "id": "d0516ac4e0ebe38d049c22537b27d2ac0d6fc094",
+      "title": "Analyzing Consumer Behavior in E-Commerce: Insights from Data-Driven Approaches",
+      "summary": "Introduction; Understanding modern shopping behaviors and developing effective marketing strategies have made e-commerce consumer analysis a critical tool for businesses. Objective; This study delves into consumer behavior patterns by analyzing a comprehensive Kaggle dataset centered on online retail activities, which includes demographic details, purchasing trends, and user engagement metrics. Utilizing advanced data science methodologies—such as data preprocessing, exploratory data analysis, and predictive modeling—the research uncovers valuable insights into customer segmentation, spending behaviors, and strategies to enhance customer retention.Method; The analysis reveals significant trends, such as the impact of seasonal variations on online shopping, the role of demographic factors in shaping product preferences, and the effectiveness of personalized marketing in boosting conversion rates. Result; These findings underscore the importance of tailoring marketing efforts to align with consumer needs and preferences. Additionally, the study highlights the necessity for e-commerce businesses to adopt continuous data monitoring and implement robust analytical frameworks to remain competitive in an ever-evolving digital marketplace.Conclusion; This research provides actionable recommendations for e-commerce stakeholders, emphasizing the integration of data-driven insights into their strategies. By leveraging these insights, businesses can optimize their marketing approaches, improve customer satisfaction, and ultimately drive growth in the highly competitive online retail landscape.",
+      "published": "2025",
+      "authors": [
+        "Danish Anwar",
+        "Md. Faizanuddin",
+        "Faisal Rahman",
+        "Rajeshwar Dayal"
+      ],
+      "journal": {
+        "name": "Management (Montevideo)"
+      },
+      "url": "https://www.semanticscholar.org/paper/d0516ac4e0ebe38d049c22537b27d2ac0d6fc094"
+    },
+    {
+      "source": "Semantic Scholar",
+      "id": "6744cc26701f4da6b6d21b51e0b8c9b577eb0202",
+      "title": "Managing consumer trust in e-commerce: evidence from advanced versus emerging markets",
+      "summary": "PurposeGaining and maintaining trust in e-commerce is crucial for online purchases. Specifically, understanding trust formation and its consequences in a cross-market online shopping context is important, as cross-market studies are scarce. Therefore, this study examines antecedents and consequences of consumer trust in online shopping (TOS) by comparing advanced and emerging markets.Design/methodology/approachTo test the formulated hypotheses, data including 397 responses from Austria and 205 from Moldova are analysed. Using partial least squares (PLS) path modelling, implications for theory and practice in cross-market e-commerce are obtained.FindingsEmpirical findings show that company reputation, perceived security and website quality positively influence consumer TOS. TOS corresponds directly positively with purchase intentions (PI). Our research confirms the negative relationship between trust and perceived risk (PR) as well as that between PR and PI. Furthermore, a significant difference between Austria and Moldova regarding the influence of experience and perceived website quality (PWQ) on TOS is observed.Originality/valueOur study fills research gaps concerning TOS within the context of cross-market e-commerce. It contributes theoretically and practically and reveals the importance of customer trust and risk reduction for online retailers within advanced and emerging markets in order to provoke online PI.",
+      "published": "2024",
+      "authors": [
+        "Michaela Quintus",
+        "Kathrin Mayr",
+        "Katharina Maria Hofer",
+        "Yen-Ting Chiu"
+      ],
+      "journal": {
+        "name": "International Journal of Retail &amp; Distribution Management"
+      },
+      "url": "https://www.semanticscholar.org/paper/6744cc26701f4da6b6d21b51e0b8c9b577eb0202"
+    }
+  ]
 }

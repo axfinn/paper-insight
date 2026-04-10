@@ -74,7 +74,7 @@ def analyze_project(project: dict, api_key: str = None) -> dict:
     try:
         response = client.messages.create(
             model=config['model'],
-            max_tokens=1024,
+            max_tokens=8192,
             messages=[{"role": "user", "content": prompt}]
         )
 
