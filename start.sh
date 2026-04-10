@@ -137,6 +137,10 @@ run_continuous() {
 ╚══════════════════════════════════════════════════════════════╝
     """
 
+    # 先构建 Hugo 网站（确保 public 目录存在）
+    echo "[*] 初始构建 Hugo 网站..."
+    do_build_hugo
+
     # 启动静态文件服务器（后台运行）
     echo "[*] 启动静态文件服务器 :8084 ..."
     python3 -m http.server 8084 --directory "$SCRIPT_DIR/hugo_site/public" &
