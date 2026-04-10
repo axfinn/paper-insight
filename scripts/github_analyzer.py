@@ -17,14 +17,37 @@ except ImportError:
     HAS_ANTHROPIC = False
 
 
+def get_ai_config() -> dict:
+    """获取 AI 配置"""
+    import yaml
+    config_path = Path(__file__).parent.parent / 'config' / 'local.yaml'
+    if config_path.exists():
+        with open(config_path, 'r') as f:
+            LOCAL_CONFIG = yaml.safe_load(f)
+    else:
+        LOCAL_CONFIG = {}
+    ai = LOCAL_CONFIG.get('ai', {})
+    return {
+        'api_url': ai.get('api_url') or os.environ.get('AI_API_URL', 'https://api.minimaxi.com/anthropic'),
+        'api_key': ai.get('api_key') or os.environ.get('MINIMAX_API_KEY') or os.environ.get('ANTHROPIC_API_KEY', ''),
+        'model': ai.get('model', 'claude-3-5-haiku-20241022'),
+    }
+
+
 def analyze_project(project: dict, api_key: str = None) -> dict:
-    """使用 Claude 分析单个项目"""
+    """使用 AI API 分析单个项目"""
     if not HAS_ANTHROPIC:
         return {**project, 'analyzed': False, 'error': 'anthropic not installed'}
 
-    client = anthropic.Anthropic(api_key=api_key or os.environ.get('ANTHROPIC_API_KEY'))
+    config = get_ai_config()
+    api_key = api_key or config['api_key']
 
-    prompt = f"""你是一位资深开源项目评审专家。请分析以下 GitHub 项目，判断它是否"有意思"。
+    client = anthropic.Anthropic(
+        api_key=api_key,
+        base_url=config['api_url'] if config['api_url'] != 'https://api.anthropic.com/v1' else None
+    )
+
+    prompt = f"""你是一位资深开源项目评审专家。请分析以下 GitHub 项目，判断它是否"有意思"。**用中文回答**。
 
 项目: {project.get('full_name', 'N/A')}
 描述: {project.get('description', 'N/A')}
@@ -36,25 +59,46 @@ def analyze_project(project: dict, api_key: str = None) -> dict:
 请分析并返回以下信息（JSON格式）：
 {{
     "title": "项目名称",
-    "innovation": "核心创新点（20字内）",
+    "innovation": "核心创新点（20字内）用中文",
     "tech_stack": ["技术栈1", "技术栈2"],
-    "application": "典型应用场景",
-    "why_interesting": "为什么这个项目有意思（50字内）",
+    "application": "典型应用场景，用中文",
+    "why_interesting": "为什么这个项目有意思（50字内）用中文",
     "potential": "潜力评分 1-5",
     "difficulty": "学习难度 1-5（1=入门, 5=专家）",
     "category": "项目分类（如：AI工具、DevOps、前端框架、数据库、安全等）",
-    "verdict": "值得关注的理由或不值得关注的原因（30字内）"
+    "verdict": "值得关注的理由或不值得关注的原因（30字内）用中文"
 }}
 
 只返回JSON，不要其他内容。"""
 
     try:
         response = client.messages.create(
-            model="claude-opus-4-6",
+            model=config['model'],
             max_tokens=1024,
             messages=[{"role": "user", "content": prompt}]
         )
-        result = json.loads(response.content[0].text)
+
+        # 提取响应文本（兼容 MiniMax 格式）
+        response_text = ""
+        for block in response.content:
+            if hasattr(block, 'text'):
+                response_text = block.text
+                break
+            elif hasattr(block, 'thinking'):
+                # MiniMax 可能有思考块，忽略
+                continue
+
+        # 去掉可能的 markdown 代码块包裹
+        text = response_text.strip()
+        if text.startswith('```json'):
+            text = text[7:]
+        elif text.startswith('```'):
+            text = text[3:]
+        if text.endswith('```'):
+            text = text[:-3]
+        text = text.strip()
+
+        result = json.loads(text)
         return {**project, **result, 'analyzed': True}
     except Exception as e:
         return {**project, 'analyzed': False, 'error': str(e)}

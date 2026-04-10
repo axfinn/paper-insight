@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-论文分析器 - 调用 Claude API 分析论文
+论文分析器 - 调用 Claude/MiniMax API 分析论文
 """
 
 import json
@@ -12,13 +12,42 @@ from pathlib import Path
 # 添加项目根目录到路径
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+# 导入配置
+try:
+    import yaml
+    config_path = Path(__file__).parent.parent / 'config' / 'local.yaml'
+    if config_path.exists():
+        with open(config_path, 'r') as f:
+            LOCAL_CONFIG = yaml.safe_load(f)
+    else:
+        LOCAL_CONFIG = {}
+except:
+    LOCAL_CONFIG = {}
+
+def get_ai_config() -> dict:
+    """获取 AI 配置"""
+    ai = LOCAL_CONFIG.get('ai', {})
+    return {
+        'api_url': ai.get('api_url') or os.environ.get('AI_API_URL', 'https://api.minimaxi.com/anthropic'),
+        'api_key': ai.get('api_key') or os.environ.get('MINIMAX_API_KEY') or os.environ.get('ANTHROPIC_API_KEY', ''),
+        'model': ai.get('model', 'claude-3-5-haiku-20241022'),
+    }
+
+
 def analyze_paper(paper: dict, industry: str, api_key: str = None) -> dict:
-    """使用 Claude 分析单篇论文"""
+    """使用 AI API 分析单篇论文"""
     import anthropic
 
-    client = anthropic.Anthropic(api_key=api_key or os.environ.get('ANTHROPIC_API_KEY'))
+    config = get_ai_config()
+    api_key = api_key or config['api_key']
 
-    prompt = f"""你是一位专业的行业研究员。请深度分析以下{industry}领域的论文，提取完整信息。
+    # 使用 MiniMax/Claude 兼容接口
+    client = anthropic.Anthropic(
+        api_key=api_key,
+        base_url=config['api_url'] if config['api_url'] != 'https://api.anthropic.com/v1' else None
+    )
+
+    prompt = f"""你是一位专业的行业研究员。请深度分析以下{industry}领域的论文，提取完整信息。**用中文回答**。
 
 论文标题: {paper.get('title', 'N/A')}
 作者: {', '.join(paper.get('authors', [])[:5])}
@@ -32,29 +61,53 @@ def analyze_paper(paper: dict, industry: str, api_key: str = None) -> dict:
 请深度分析并返回以下信息（JSON格式）：
 {{
     "title": "论文标题",
-    "problem": "论文要解决什么问题？为什么这个问题重要？",
-    "background": "背景：之前的方法是什么，有什么局限性？",
-    "method": "本文的核心方法/技术是什么？具体创新点是什么？",
-    "novelty": "最大的创新点/突破是什么？相比之前工作的本质区别？",
-    "results": "实验结果如何？关键数据指标？",
-    "application": "实际应用场景和商业价值",
-    "limitations": "论文的局限性/缺点/未解决的问题",
-    "future": "未来改进方向和研究机会",
+    "problem": "论文要解决什么问题？为什么这个问题重要？用中文回答。",
+    "background": "背景：之前的方法是什么，有什么局限性？用中文回答。",
+    "method": "本文的核心方法/技术是什么？具体创新点是什么？用中文回答。",
+    "novelty": "最大的创新点/突破是什么？相比之前工作的本质区别？用中文回答。",
+    "results": "实验结果如何？关键数据指标？用中文回答。",
+    "application": "实际应用场景和商业价值。用中文回答。",
+    "limitations": "论文的局限性/缺点/未解决的问题。用中文回答。",
+    "future": "未来改进方向和研究机会。用中文回答。",
     "rating": "1-5分的行业影响力评分（5=必读，1=可忽略）",
     "difficulty": "学习难度 1-5（1=入门级，5=专家级）",
     "tags": ["相关领域标签1", "标签2", "标签3"],
-    "must_read": true/false  # 是否值得精读
+    "must_read": true
 }}
 
 只返回JSON，不要其他内容。"""
 
     try:
         response = client.messages.create(
-            model="claude-opus-4-6",
+            model=config['model'],
             max_tokens=1024,
             messages=[{"role": "user", "content": prompt}]
         )
-        result = json.loads(response.content[0].text)
+
+        # 提取响应文本（兼容 MiniMax 格式）
+        response_text = ""
+        for block in response.content:
+            if hasattr(block, 'text'):
+                response_text = block.text
+                break
+            elif hasattr(block, 'thinking'):
+                # MiniMax 可能有思考块，忽略
+                continue
+
+        if not response_text:
+            return {**paper, 'analyzed': False, 'error': 'Empty response from API'}
+
+        # 去掉可能的 markdown 代码块包裹
+        text = response_text.strip()
+        if text.startswith('```json'):
+            text = text[7:]
+        elif text.startswith('```'):
+            text = text[3:]
+        if text.endswith('```'):
+            text = text[:-3]
+        text = text.strip()
+
+        result = json.loads(text)
         return {**paper, **result, 'analyzed': True}
     except Exception as e:
         print(f"  [!] Analysis error: {e}")

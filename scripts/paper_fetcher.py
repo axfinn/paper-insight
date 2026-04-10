@@ -4,6 +4,8 @@
 - arXiv: AI/ML、新能源、半导体
 - PubMed: 医疗
 - Semantic Scholar: 金融、消费、游戏
+
+网络异常时自动使用代理（SOCKS5 或 HTTP）
 """
 
 import urllib.request
@@ -15,23 +17,36 @@ import os
 from datetime import datetime
 from typing import List, Dict
 
-# 代理配置
-PROXY = os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY') or ''
-PROXY_HANDLER = urllib.request.ProxyHandler({
-    'http': PROXY,
-    'https': PROXY,
-}) if PROXY else urllib.request.ProxyHandler({})
+# 导入代理模块
+try:
+    from proxy import get_proxy_config, fetch_with_fallback, check_connection
+    HAS_PROXY = True
+except ImportError:
+    HAS_PROXY = False
+    # 降级：使用简单的 HTTP 代理
+    PROXY = os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY') or ''
+    PROXY_HANDLER = urllib.request.ProxyHandler({
+        'http': PROXY,
+        'https': PROXY,
+    }) if PROXY else urllib.request.ProxyHandler({})
 
 
-def fetch_with_proxy(url: str, timeout: int = 30) -> str:
-    """使用代理获取 URL 内容"""
-    proxy_handler = PROXY_HANDLER
-    opener = urllib.request.build_opener(proxy_handler)
+def fetch_with_proxy(url: str, timeout: int = 30) -> tuple:
+    """
+    获取 URL 内容，网络失败时自动尝试代理
+    返回 (content, used_proxy, error)
+    """
+    if HAS_PROXY:
+        return fetch_with_fallback(url, timeout=timeout)
+
+    # 降级：直接使用环境变量代理
     try:
+        proxy_handler = PROXY_HANDLER
+        opener = urllib.request.build_opener(proxy_handler)
         with opener.open(url, timeout=timeout) as response:
-            return response.read().decode('utf-8')
+            return response.read().decode('utf-8'), bool(PROXY), None
     except Exception as e:
-        raise Exception(f"请求失败: {e}")
+        return None, bool(PROXY), str(e)
 
 
 class PaperFetcher:

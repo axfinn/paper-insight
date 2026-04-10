@@ -1,14 +1,22 @@
 # 本地配置示例 - 复制为 local.yaml 后修改
 
-# 代理配置（网络不通时使用）
+# 代理配置（网络不通时使用 SOCKS5）
 proxy:
   enabled: false
-  http: "http://127.0.0.1:8080"
-  https: "http://127.0.0.1:8080"
+  type: "socks5"              # socks5 或 http
+  host: "127.0.0.1"          # proxy-client 监听地址
+  port: 1080                  # proxy-client 监听端口
 
-# Claude API 配置
-claude:
-  api_key: ""  # 留空则使用 ANTHROPIC_API_KEY 环境变量
+# AI API 配置（支持 Claude 兼容接口）
+ai:
+  # 默认使用 MiniMax（兼容 Claude 格式）
+  api_url: "https://api.minimaxi.com/anthropic/v1"
+  api_key: ""                  # 留空则使用环境变量 MINIMAX_API_KEY
+  model: "claude-3-5-haiku-20241022"  # MiniMax 模型名
+
+  # 备选：原生 Claude API
+  # api_url: "https://api.anthropic.com/v1"
+  # api_key: ""  # 留空则使用 ANTHROPIC_API_KEY
 
 # GitHub Token（可选，提高 API 限制）
 github:
