@@ -17,6 +17,8 @@ services:
       - ./github:/app/github
       - ./logs:/app/logs
       - ./hugo_site/public:/app/public
+      # Claude CLI 配置（复用主机的登录状态）
+      - ~/.claude:/home/appuser/.claude:ro
     ports:
       - "8084:8084"
     networks:

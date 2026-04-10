@@ -8,6 +8,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     wget \
     curl \
+    jq \
+    nodejs \
+    npm \
     && rm -rf /var/lib/apt/lists/*
 
 # 安装 Hugo (用于静态网站生成)
@@ -16,6 +19,13 @@ RUN wget -q https://github.com/gohugoio/hugo/releases/download/v0.123.0/hugo_0.1
     mv /tmp/hugo /usr/local/bin/hugo && \
     rm -f /tmp/hugo_0.123.0_linux-amd64.tar.gz && \
     chmod +x /usr/local/bin/hugo
+
+# 安装 Claude Code CLI (Linux)
+RUN npm install -g @anthropic-ai/claude-code && \
+    ln -sf /usr/local/bin/claude /usr/bin/claude
+
+# 验证 Claude CLI
+RUN claude --version || echo "Claude CLI installed"
 
 # 设置工作目录
 WORKDIR /app
@@ -31,6 +41,13 @@ COPY . .
 
 # 创建数据目录
 RUN mkdir -p /app/data /app/logs /app/reports
+
+# 创建非 root 用户（避免挂载 ~/.claude 权限问题）
+RUN useradd -m -s /bin/bash appuser && \
+    chown -R appuser:appuser /app
+
+# 切换到非 root 用户
+USER appuser
 
 # 暴露端口
 EXPOSE 8084
