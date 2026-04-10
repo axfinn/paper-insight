@@ -5,6 +5,8 @@ services:
     build: .
     container_name: paper-insight
     restart: unless-stopped
+    env_file:
+      - .env
     environment:
       - TZ=Asia/Shanghai
       - FETCH_INTERVAL=7200      # 抓取间隔（秒），默认 2 小时

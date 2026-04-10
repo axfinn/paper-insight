@@ -7,6 +7,13 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$SCRIPT_DIR"
 
+# 加载环境变量（MiniMax API 配置）
+if [ -f "$SCRIPT_DIR/.env" ]; then
+    set -a
+    source "$SCRIPT_DIR/.env"
+    set +a
+fi
+
 # ─── 自动下载 autodev ───
 install_autodev() {
     if [ -d "$SCRIPT_DIR/clawtest/autodev" ]; then
