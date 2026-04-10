@@ -18,7 +18,7 @@ services:
       - ./logs:/app/logs
       - ./hugo_site/public:/app/public
     ports:
-      - "8000:8000"
+      - "8084:8084"
     networks:
       - paper-insight-net
 

@@ -33,7 +33,7 @@ COPY . .
 RUN mkdir -p /app/data /app/logs /app/reports
 
 # 暴露端口
-EXPOSE 8000
+EXPOSE 8084
 
 # 默认运行持续模式（抓取 + 分析 + 构建网站）
 CMD ["./start.sh", "continuous"]
