@@ -147,9 +147,8 @@ run_continuous() {
 # ─── Autodev 自主迭代模式 ───
 run_autodev_loop() {
     install_autodev  # 先确保 autodev 已安装
-    check_deps
 
-    PROJECT_DIR="/tmp/paper-insight/loop"
+    PROJECT_DIR="/tmp/paper-insight/improve"
 
     mkdir -p "$PROJECT_DIR"
 
@@ -157,18 +156,18 @@ run_autodev_loop() {
 ╔══════════════════════════════════════════════════════════════╗
 ║              Paper Insight + AutoDev 自主迭代                 ║
 ║                                                              ║
-║  使用 autodev 的 run_loop 模式                              ║
-║  自动分析 GitHub 和论文，持续改进                             ║
+║  用途: 改进项目本身（优化爬虫、分析逻辑、添加新功能）           ║
+║  采集任务由 continuous 模式处理                              ║
 ║                                                              ║
 ║  停止方式: ./clawtest/autodev/autodev-stop $PROJECT_DIR      ║
 ╚══════════════════════════════════════════════════════════════╝
     """
 
-    # 初始任务
-    TASK="持续分析 GitHub Trending 项目和论文情报站数据，每小时自动抓取最新内容，生成有价值的排行榜和分析报告，发现有趣的开源项目和学术论文"
+    # 初始任务 - 明确边界，专注于项目改进
+    TASK="改进 Paper Insight 项目：优化 scripts/ 下的爬虫和分析逻辑，提高报告质量，添加新功能（如自动摘要、趋势预测）。项目位于 {SCRIPT_DIR}"
 
     cd "$SCRIPT_DIR/clawtest/autodev"
-    ./autodev "$TASK" --path "$PROJECT_DIR" --loop --publish
+    ./autodev "$TASK" --path "$PROJECT_DIR" --loop --publish --build
 }
 
 # ─── 使用说明 ───
