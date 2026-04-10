@@ -194,6 +194,11 @@ run_autodev_loop() {
     # 创建 autodev 工作区
     mkdir -p "$AUTODEV_WORKSPACE"
 
+    # 确保 public 目录存在（Hugo 构建）
+    mkdir -p "$SCRIPT_DIR/hugo_site/public"
+    echo "[*] 初始构建 Hugo 网站..."
+    do_build_hugo
+
     # 启动静态文件服务器（后台运行）
     echo "[*] 启动静态文件服务器 :8084 ..."
     python3 -m http.server 8084 --directory "$SCRIPT_DIR/hugo_site/public" &
