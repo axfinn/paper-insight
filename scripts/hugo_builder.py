@@ -215,11 +215,11 @@ pre { background: #1e293b; color: #e2e8f0; padding: 1rem; border-radius: 8px; ov
     (hugo_dir / 'layouts' / '_default' / 'single.html').write_text(layout_html)
 
     # 复制 hugo.toml
-    hugo_config = """baseURL = "https://paper-insight.example.com/"
+    hugo_config = """baseURL = "http://localhost:8084/"
 languageCode = "zh-cn"
 title = "Paper Insight | 论文情报站"
-theme = ""
 publishDir = "public"
+disableHugoGeneratorInject = true
 
 [frontmatter]
 date = ["date", "publishDate"]
