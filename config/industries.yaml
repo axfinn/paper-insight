@@ -1,0 +1,40 @@
+industries:
+  - name: "AI/ML"
+    keywords: ["machine learning", "deep learning", "neural network", "large language model", "transformer", "AI"]
+    arxiv_categories: ["cs.AI", "cs.LG", "cs.CL", "cs.CV"]
+    color: "#ff6b6b"
+
+  - name: "医疗健康"
+    keywords: ["medical", "healthcare", "diagnosis", "treatment", "drug discovery", "clinical"]
+    pubmed_query: "medical[Title/Abstract] OR healthcare[Title/Abstract]"
+    color: "#4ecdc4"
+
+  - name: "金融"
+    keywords: ["finance", "trading", "investment", "blockchain", "cryptocurrency", "fintech"]
+    semantic_scholar_queries: ["finance trading investment", "blockchain cryptocurrency"]
+    color: "#45b7d1"
+
+  - name: "新能源/材料"
+    keywords: ["solar", "battery", "energy storage", "hydrogen", "catalyst", "materials"]
+    arxiv_categories: ["physics.app-ph", "chem.sci"]
+    color: "#96ceb4"
+
+  - name: "半导体/芯片"
+    keywords: ["semiconductor", "chip", "transistor", "integrated circuit", "silicon"]
+    arxiv_categories: ["physics.app-ph", "eess.SY"]
+    color: "#dda0dd"
+
+  - name: "消费/电商"
+    keywords: ["e-commerce", "retail", "consumer", "recommendation", "supply chain"]
+    semantic_scholar_queries: ["e-commerce retail consumer"]
+    color: "#ffa07a"
+
+  - name: "游戏"
+    keywords: ["gaming", "game AI", "graphics", "virtual reality", "metaverse"]
+    semantic_scholar_queries: ["gaming graphics virtual reality"]
+    color: "#98d8c8"
+
+settings:
+  papers_per_industry: 10  # 每个行业每天抓取论文数
+  analysis_batch_size: 5    # 每批分析论文数
+  report_update_interval: "1h"  # 报告更新间隔

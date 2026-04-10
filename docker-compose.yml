@@ -1,0 +1,27 @@
+# Paper Insight Docker Compose 配置
+
+services:
+  paper-insight:
+    build: .
+    container_name: paper-insight
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Shanghai
+      - FETCH_INTERVAL=7200      # 抓取间隔（秒），默认 2 小时
+      - ANALYSIS_INTERVAL=1800   # 分析间隔（秒），默认 30 分钟
+    volumes:
+      # 持久化数据
+      - ./data:/app/data
+      - ./reports:/app/reports
+      - ./papers:/app/papers
+      - ./github:/app/github
+      - ./logs:/app/logs
+      - ./hugo_site/public:/app/public
+    ports:
+      - "8000:8000"
+    networks:
+      - paper-insight-net
+
+networks:
+  paper-insight-net:
+    driver: bridge

@@ -1,0 +1,9 @@
+baseURL = "https://paper-insight.example.com/"
+languageCode = "zh-cn"
+title = "Paper Insight | 论文情报站"
+publishDir = "../public"
+
+[params]
+description = "AI驱动的多行业论文情报站，每天自动抓取和分析最新论文"
+keywords = ["论文", "AI", "机器学习", "医疗", "金融", "新能源"]
+author = "Paper Insight Bot"
