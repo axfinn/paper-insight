@@ -1,0 +1,12 @@
+baseURL = "https://paper-insight.example.com/"
+languageCode = "zh-cn"
+title = "Paper Insight | 论文情报站"
+theme = "hugo-theme-terminal"
+publishDir = "../public"
+
+[params]
+  description = "AI 驱动的多行业论文情报站"
+  keywords = ["论文", "AI", "机器学习", "医疗", "金融", "新能源"]
+  author = "Paper Insight Bot"
+  center_logo = true
+  show_all_pages = true

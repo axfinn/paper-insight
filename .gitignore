@@ -1,0 +1,24 @@
+# 数据目录（运行时生成，不提交）
+papers/
+github/
+reports/
+logs/
+data/
+
+# Hugo 生成的静态文件
+public/
+
+# 本地配置
+config/local.yaml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
