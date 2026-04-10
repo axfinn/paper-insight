@@ -4,6 +4,7 @@ github/
 reports/
 logs/
 data/
+autodev_workspace/
 
 # Hugo 生成的静态文件
 public/
