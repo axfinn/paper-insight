@@ -44,21 +44,34 @@ def cleanup_directory(dir_path: Path, keep_days: int, pattern: str = "*"):
 
 
 def cleanup_autodev_logs(keep_days: int = 3):
-    """清理 autodev 的 /tmp/autodev 旧项目（保留最近活跃的）"""
-    autodev_base = Path("/tmp/autodev")
-    if not autodev_base.exists():
-        return 0
-
+    """清理 autodev 的旧项目（保留最近活跃的）"""
     removed = 0
-    # 扫描所有项目目录
-    for project_dir in autodev_base.iterdir():
-        if not project_dir.is_dir():
-            continue
-        age = get_days_old(project_dir)
-        if age > keep_days:
-            shutil.rmtree(project_dir)
-            print(f"  🗑️  删除 autodev 项目 ({age}天前): {project_dir.name}")
-            removed += 1
+
+    # 清理 /tmp/autodev
+    autodev_base = Path("/tmp/autodev")
+    if autodev_base.exists():
+        for project_dir in autodev_base.iterdir():
+            if not project_dir.is_dir():
+                continue
+            age = get_days_old(project_dir)
+            if age > keep_days:
+                shutil.rmtree(project_dir)
+                print(f"  🗑️  删除 autodev 项目 ({age}天前): {project_dir.name}")
+                removed += 1
+
+    # 清理本地的 autodev_workspace
+    script_dir = Path(__file__).parent.parent
+    local_workspace = script_dir / 'autodev_workspace'
+    if local_workspace.exists():
+        for project_dir in local_workspace.iterdir():
+            if not project_dir.is_dir():
+                continue
+            age = get_days_old(project_dir)
+            if age > keep_days:
+                shutil.rmtree(project_dir)
+                print(f"  🗑️  删除本地 autodev 项目 ({age}天前): {project_dir.name}")
+                removed += 1
+
     return removed
 
 

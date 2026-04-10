@@ -145,6 +145,8 @@ run_continuous() {
 
 # ─── Autodev 自主迭代模式 ───
 run_autodev_loop() {
+    install_autodev
+
     echo """
 ╔══════════════════════════════════════════════════════════════╗
 ║              Paper Insight + AutoDev 任务模式                 ║
@@ -155,8 +157,49 @@ run_autodev_loop() {
 ╚══════════════════════════════════════════════════════════════╝
     """
 
-    # 直接运行 continuous 模式的任务（使用 MiniMax API 分析）
-    run_continuous
+    AUTODEV_DIR="$SCRIPT_DIR/clawtest/autodev"
+    AUTODEV_WORKSPACE="$SCRIPT_DIR/autodev_workspace"
+
+    # 创建 autodev 工作区
+    mkdir -p "$AUTODEV_WORKSPACE"
+
+    while true; do
+        timestamp=$(date '+%Y-%m-%d %H:%M:%S')
+        echo "[$timestamp] === 开始抓取 ==="
+
+        # 抓取论文
+        do_fetch_papers
+
+        # 抓取 GitHub
+        do_fetch_github
+
+        echo "[$timestamp] === 开始 AI 分析（autodev）==="
+
+        # 使用 autodev 分析论文
+        # 任务：分析 papers/ 目录，生成报告到 reports/
+        TASK="分析 paper-insight 项目 papers/ 目录下的今日论文数据，生成分析报告到 reports/ 目录。要求：
+1. 读取 papers/*.json 文件了解今日抓取的论文
+2. 对每篇论文进行深度分析（问题、背景、方法、创新点、结果、局限性）
+3. 按行业生成 Markdown 报告到 reports/ 目录
+4. 必读论文要有完整详细分析，其他论文要有摘要
+5. 最终生成 reports/RESULT.md 汇总所有分析结果"
+
+        cd "$AUTODEV_DIR"
+        ./autodev "$TASK" --path "$AUTODEV_WORKSPACE/paper-analysis-$(date +%m%d-%H%M)" --publish 2>&1 || {
+            echo "[!] autodev 执行异常，切换到 Python 脚本模式..."
+            do_analyze_papers
+            do_analyze_github
+        }
+
+        # Hugo 建站
+        do_build_hugo
+
+        # 清理
+        do_cleanup
+
+        echo "[$timestamp] === 本轮完成，等待 ${FETCH_INTERVAL}s ==="
+        sleep $FETCH_INTERVAL
+    done
 }
 
 # ─── 使用说明 ───
