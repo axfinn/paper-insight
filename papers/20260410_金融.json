@@ -1,5 +1,168 @@
 {
   "industry": "金融",
-  "fetched_at": "2026-04-10T19:03:08.182508",
-  "papers": []
+  "fetched_at": "2026-04-10T23:59:31.467998",
+  "papers": [
+    {
+      "source": "Semantic Scholar",
+      "id": "82e46cec77b253450d464cc3048be455041e2c3f",
+      "title": "Carbon emissions trading policy, carbon finance, and carbon emissions reduction: evidence from a quasi-natural experiment in China",
+      "summary": "The purpose of this paper is to explore whether the implementation of carbon emissions trading policy (CETP) promotes carbon finance, proxied by investment and financing facilitating carbon emissions reduction (IFCER), and reduces carbon emissions. Evidence shows that first, CETP is effective in stimulating IFCER and reducing carbon emissions. Second, the effects of CETP persist over time. Third, the effects of CETP taking effect in pilot regions can spill over to non-pilot regions nearby. Fourth, the effect is more pronounced in eastern and wealthy regions. Finally, R&D and industrial upgrading have a mediating effect linking CETP to IFCER and carbon emissions.",
+      "published": "2021",
+      "authors": [
+        "Qianqian Guo",
+        "Zhi-fang Su",
+        "C. Chiao"
+      ],
+      "journal": {
+        "name": "Economic Change and Restructuring",
+        "pages": "1445 - 1480",
+        "volume": "55"
+      },
+      "url": "https://www.semanticscholar.org/paper/82e46cec77b253450d464cc3048be455041e2c3f"
+    },
+    {
+      "source": "Semantic Scholar",
+      "id": "f9b858001c227411043bb32f270c2a7b0d1fc7c1",
+      "title": "Insider trading and shareholder investment horizons",
+      "summary": "Abstract This paper examines the effects of shareholder investment horizons on insider trading. We find that insiders are less likely to trade on private information and the profitability of insider trades is lower when shareholder investment horizons are longer. We further examine two channels through which shareholders with longer investment horizons can impede insider trading: direct monitoring and better information environment. Consistent with the direct monitoring channel, we show that insiders in firms with longer shareholder investment horizons are more likely to shift trades from the month right before earnings announcements to the month right after earnings announcements. Moreover, the impact of investment horizons are stronger in firms with higher ex ante litigation risk, with lower corporate governance quality, and that are not targets of hedge fund activists. Consistent with the information environment channel, we show that longer shareholder investment horizons increase the frequencies of information disclosure and insiders in firms with longer shareholder investment horizons are more likely to trade in an isolated manner rather than in sequences.",
+      "published": "2020",
+      "authors": [
+        "Xudong Fu",
+        "Lei-Lei Kong",
+        "Tian Tang",
+        "Xinyan Yan"
+      ],
+      "journal": {
+        "name": "Journal of Corporate Finance"
+      },
+      "url": "https://www.semanticscholar.org/paper/f9b858001c227411043bb32f270c2a7b0d1fc7c1"
+    },
+    {
+      "source": "Semantic Scholar",
+      "id": "07ad11edf99e7a8366c2dfab8971a317ceac595a",
+      "title": "Impact of Behavioral Finance on Stock Investment Decisions Applied Study on a Sample of Investors at Amman Stock Exchange",
+      "summary": "无摘要",
+      "published": "2019",
+      "authors": [
+        "A. Areiqat",
+        "Ayman Abu-Rumman",
+        "Yousef Satea Al-Alani",
+        "Alaa Alhorani"
+      ],
+      "journal": {
+        "name": "Academy of Accounting and Financial Studies Journal",
+        "pages": "1",
+        "volume": "23"
+      },
+      "url": "https://www.semanticscholar.org/paper/07ad11edf99e7a8366c2dfab8971a317ceac595a"
+    },
+    {
+      "source": "Semantic Scholar",
+      "id": "a4f52707bb523db3d050fc73a6dc627f895e162a",
+      "title": "Environmental, social, and governance (ESG) and artificial intelligence in finance: State-of-the-art and research takeaways",
+      "summary": "The rapidly growing research landscape in finance, encompassing environmental, social, and governance (ESG) topics and associated Artificial Intelligence (AI) applications, presents challenges for both new researchers and seasoned practitioners. This study aims to systematically map the research area, identify knowledge gaps, and examine potential research areas for researchers and practitioners. The investigation focuses on three primary research questions: the main research themes concerning ESG and AI in finance, the evolution of research intensity and interest in these areas, and the application and evolution of AI techniques specifically in research studies within the ESG and AI in finance domain. Eight archetypical research domains were identified: (i) Trading and Investment, (ii) ESG Disclosure, Measurement and Governance, (iii) Firm Governance, (iv) Financial Markets and Instruments, (v) Risk Management, (vi) Forecasting and Valuation, (vii) Data, and (viii) Responsible Use of AI. Distinctive AI techniques were found to be employed across these archetypes. The study contributes to consolidating knowledge on the intersection of ESG, AI, and finance, offering an ontological inquiry and key takeaways for practitioners and researchers. Important insights include the popularity and crowding of the Trading and Investment domain, the growth potential of the Data archetype, and the high potential of Responsible Use of AI, despite its low publication count. By understanding the nuances of different research archetypes, researchers and practitioners can better navigate this complex landscape and contribute to a more sustainable and responsible financial sector.",
+      "published": "2024",
+      "authors": [
+        "Tristan Lim"
+      ],
+      "journal": {
+        "name": "Artificial Intelligence Review",
+        "volume": "57"
+      },
+      "url": "https://www.semanticscholar.org/paper/a4f52707bb523db3d050fc73a6dc627f895e162a"
+    },
+    {
+      "source": "Semantic Scholar",
+      "id": "b45e8f6ca32fc1142c729c4333abfd6e64b207f7",
+      "title": "Government policy, June 27, 1994 : in the areas of finance, trading (trade), investment",
+      "summary": "无摘要",
+      "published": "1994",
+      "authors": [
+        "B. Jaya"
+      ],
+      "journal": "",
+      "url": "https://www.semanticscholar.org/paper/b45e8f6ca32fc1142c729c4333abfd6e64b207f7"
+    },
+    {
+      "source": "Semantic Scholar",
+      "id": "1b31930e05ba75daf9dafb409242b53af663db66",
+      "title": "Automate Strategy Finding with LLM in Quant investment",
+      "summary": "We present a novel three-stage framework leveraging Large Language Models (LLMs) within a risk-aware multi-agent system for automate strategy finding in quantitative finance. Our approach addresses the brittleness of traditional deep learning models in financial applications by: employing prompt-engineered LLMs to generate executable alpha factor candidates across diverse financial data, implementing multimodal agent-based evaluation that filters factors based on market status, predictive quality while maintaining category balance, and deploying dynamic weight optimization that adapts to market conditions. Experimental results demonstrate the robust performance of the strategy in Chinese&US market regimes compared to established benchmarks. Our work extends LLMs capabilities to quantitative trading, providing a scalable architecture for financial signal extraction and portfolio construction. The overall framework significantly outperforms all benchmarks with 53.17% cumulative return on SSE50 (Jan 2023 to Jan 2024), demonstrating superior risk-adjusted performance and downside protection on the market.",
+      "published": "2024",
+      "authors": [
+        "Zhizhuo Kou",
+        "Holam Yu",
+        "Jingshu Peng",
+        "Lei Chen"
+      ],
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2409.06289"
+      },
+      "url": "https://www.semanticscholar.org/paper/1b31930e05ba75daf9dafb409242b53af663db66"
+    },
+    {
+      "source": "Semantic Scholar",
+      "id": "b8e1ab5f279018a2d6f677d55aa306ac6703fa47",
+      "title": "Deep reinforcement learning for automated stock trading: an ensemble strategy",
+      "summary": "Stock trading strategies play a critical role in investment. However, it is challenging to design a profitable strategy in a complex and dynamic stock market. In this paper, we propose an ensemble strategy that employs deep reinforcement schemes to learn a stock trading strategy by maximizing investment return. We train a deep reinforcement learning agent and obtain an ensemble trading strategy using three actor-critic based algorithms: Proximal Policy Optimization (PPO), Advantage Actor Critic (A2C), and Deep Deterministic Policy Gradient (DDPG). The ensemble strategy inherits and integrates the best features of the three algorithms, thereby robustly adjusting to different market situations. In order to avoid the large memory consumption in training networks with continuous action space, we employ a load-on-demand technique for processing very large data. We test our algorithms on the 30 Dow Jones stocks that have adequate liquidity. The performance of the trading agent with different reinforcement learning algorithms is evaluated and compared with both the Dow Jones Industrial Average index and the traditional min-variance portfolio allocation strategy. The proposed deep ensemble strategy is shown to outperform the three individual algorithms and two baselines in terms of the risk-adjusted return measured by the Sharpe ratio.",
+      "published": "2020",
+      "authors": [
+        "Hongyang Yang",
+        "Xiao-Yang Liu",
+        "Shanli Zhong",
+        "A. Walid"
+      ],
+      "journal": {
+        "name": "Proceedings of the First ACM International Conference on AI in Finance"
+      },
+      "url": "https://www.semanticscholar.org/paper/b8e1ab5f279018a2d6f677d55aa306ac6703fa47"
+    },
+    {
+      "source": "Semantic Scholar",
+      "id": "9f6eb784ffc460cba56077b4b8739d4eb9115f18",
+      "title": "StockFormer: Learning Hybrid Trading Machines with Predictive Coding",
+      "summary": "Typical RL-for-finance solutions directly optimize trading policies over the noisy market data, such as stock prices and trading volumes, without explicitly considering the future trends and correlations of different investment assets as we humans do. In this paper, we present StockFormer, a hybrid trading machine that integrates the forward modeling capabilities of predictive coding with the advantages of RL agents in policy flexibility. The predictive coding part consists of three Transformer branches with modified structures, which respectively extract effective latent states of long-/short-term future dynamics and asset relations. The RL agent adaptively fuses these states and then executes an actor-critic algorithm in the unified state space. The entire model is jointly trained by propagating the critic's gradients back to the predictive coding module. StockFormer significantly outperforms existing approaches across three publicly available financial datasets in terms of portfolio returns and Sharpe ratios.",
+      "published": "2023",
+      "authors": [
+        "Siyu Gao",
+        "Yunbo Wang",
+        "Xiaokang Yang"
+      ],
+      "journal": {
+        "pages": "4766-4774"
+      },
+      "url": "https://www.semanticscholar.org/paper/9f6eb784ffc460cba56077b4b8739d4eb9115f18"
+    },
+    {
+      "source": "Semantic Scholar",
+      "id": "912ca3fb66a7f239333b3611632f0affaa77a58e",
+      "title": "Does herding behavior matter in investment management and perceived market efficiency? Evidence from an emerging market",
+      "summary": "PurposeThis article aims to clarify the mechanism by which herding behavior influences perceived market efficiency, investment decisions and the performance of individual investors actively trading on the Pakistan Stock Exchange (PSX).Design/methodology/approachThe deductive approach was used in this study, as the research is based on the theoretical framework of behavioral finance. A questionnaire and cross-sectional design were employed to collect data from the sample of 309 investors trading on the PSX. The collected data were analyzed using SPSS and AMOS graphics software. Hypotheses were tested using structural equation modeling (SEM).FindingsThe article provides further empirical insights into the relationship between herding behavior and investment management and perceived market efficiency. The results suggest that herding behavior has a markedly negative influence on perceived market efficiency and investment performance, while positively influencing the decision-making of individual investors.Originality/valueThe current study is the first to focus on links between herding behavior and investment management activities and perceived market efficiency. This article enhances the understanding of the role that herding behavior plays in investment management and, more importantly, it improves understanding of behavioral aspects and their influence on investment decision-making in an emerging market. It also adds to the literature in the area of behavioral finance, specifically the role of herding behavior in investment management; this field is in its initial stage, even in developed countries, while little work has been done in developing countries.",
+      "published": "2022",
+      "authors": [
+        "Maqsood Ahmad",
+        "Qiang Wu"
+      ],
+      "journal": {
+        "name": "Management Decision"
+      },
+      "url": "https://www.semanticscholar.org/paper/912ca3fb66a7f239333b3611632f0affaa77a58e"
+    },
+    {
+      "source": "Semantic Scholar",
+      "id": "db6e4bf215df63fecf59e6218a6a92651644cb8b",
+      "title": "Overconfidence heuristic-driven bias in investment decision-making and performance: mediating effects of risk perception and moderating effects of financial literacy",
+      "summary": "PurposeThis paper aims to show how overconfidence influences the decisions and performance of individual investors trading on the Pakistan Stock Exchange (PSX), with the mediating role of risk perception and moderating role of financial literacy.Design/methodology/approachThe deductive approach was used, as the research is based on the theoretical framework of behavioural finance. A questionnaire and cross-sectional design were employed for data collection from the sample of 183 individual investors trading on the PSX. Hypotheses were tested through correlation and regression analysis. The Baron and Kenny method was used to test the mediation effect of risk perception and the moderation effect of financial literacy. The results of mediation and moderation were also authenticated through the PROCESS and structural equation modelling (SEM) technique.FindingsThe results suggest that risk perception fully mediates the relationships between the overconfidence heuristic on the one hand, and investment decisions and performance on the other. At the same time, financial literacy appears to moderate these relationships. The results suggest that overconfidence can impair the quality of investment decisions and performance, while financial literacy and risk perception can improve their quality.Practical implicationsThe paper encourages investors to base decisions on their financial capability and experience levels and to avoid relying on heuristics or their sentiments when making investments. It provides awareness and understanding of heuristic biases in investment management, which could be very useful for decision makers and professionals in financial institutions, such as portfolio managers and traders in commercial banks, investment banks and mutual funds. This paper helps investors to select better investment tools and avoid repeating the expensive errors that occur due to heuristic biases. They can improve their performance by recognizing their biases and errors of judgment, to which we are all prone, resulting in better investment decisions and a more efficient market. The paper also highlights the importance on relying on professional knowledge, giving it greater weight than feelings and biases.Originality/valueThe current study is the first to focus on links between overconfidence, financial literacy, risk perception and individual investors' decisions and performance. This article enhanced the understanding of the role that heuristic-driven bias plays in the investment management, and more importantly, it went some way towards enhancing understanding of behavioural aspects and their influence on the investment decision-making and performance in an emerging market. It also adds to the literature in the area of behavioural finance specifically the role of heuristics in investment strategies; this field is in its initial stage, even in developed countries, while, in developing countries, little work has been done.",
+      "published": "2020",
+      "authors": [
+        "Maqsood Ahmad",
+        "S. Shah"
+      ],
+      "journal": {
+        "name": "Journal of Economic and Administrative Sciences"
+      },
+      "url": "https://www.semanticscholar.org/paper/db6e4bf215df63fecf59e6218a6a92651644cb8b"
+    }
+  ]
 }

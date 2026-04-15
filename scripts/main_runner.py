@@ -209,7 +209,11 @@ class PaperInsightRunner:
             # 3. 生成首页
             self.generate_homepage()
 
-            # 4. 自迭代检查（每10次迭代执行一次）
+            # 4. 构建 Hugo 网站
+            from hugo_builder import main as build_hugo
+            build_hugo()
+
+            # 5. 自迭代检查（每10次迭代执行一次）
             if self.state['iteration'] % 10 == 0:
                 self.self_improve()
 
@@ -271,7 +275,7 @@ def main():
     parser = argparse.ArgumentParser(description='Paper Insight Runner')
     parser.add_argument('--once', action='store_true', help='运行一次后退出')
     parser.add_argument('--fetch-interval', type=int, default=3600, help='抓取间隔（秒）')
-    parser.add_argument('--analysis-interval', type=int', default=1800, help='分析间隔（秒）')
+    parser.add_argument('--analysis-interval', type=int, default=1800, help='分析间隔（秒）')
 
     args = parser.parse_args()
 
