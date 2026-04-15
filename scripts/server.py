@@ -10,10 +10,10 @@ import os
 from pathlib import Path
 import sys
 
-# 添加项目根目录
+# 添加项目根目录（必须在 import 之前）
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from status_page import generate_status_html
+from scripts.status_page import generate_status_html
 
 
 class PaperInsightHandler(http.server.SimpleHTTPRequestHandler):

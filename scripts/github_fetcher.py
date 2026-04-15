@@ -4,6 +4,7 @@ GitHub Trending 项目爬虫
 爬取 GitHub Trending 页面，按语言分类，发现有意思的开源项目
 """
 
+import os
 import urllib.request
 import urllib.parse
 import json
