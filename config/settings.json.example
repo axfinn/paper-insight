@@ -1,0 +1,21 @@
+{
+  "skills": {
+    "paths": [
+      "~/.claude/skills"
+    ]
+  },
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "sk-cp-oDsGDbrDiWvYGfr7X0FpNkVMKO17nWS_Lr1PYLmStSNvnHHvj6Xeuq5GR7i8xE6bRZCUyjLa8qgqcZiMQi4oN5v0VoAjzZrObelQ-sLAOnbgG0MynGRlwJ8",
+    "ANTHROPIC_BASE_URL": "https://api.minimaxi.com/anthropic",
+    "ANTHROPIC_MODEL": "MiniMax-M2.7",
+    "ANTHROPIC_SMALL_FAST_MODEL": "MiniMax-M2.7",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "MiniMax-M2.7",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "MiniMax-M2.7",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "MiniMax-M2.7",
+    "API_TIMEOUT_MS": "3000000",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+  },
+  "permissions": {
+    "defaultMode": "bypassPermissions"
+  }
+}

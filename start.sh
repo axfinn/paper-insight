@@ -142,9 +142,9 @@ run_continuous() {
     echo "[*] 初始构建 Hugo 网站..."
     do_build_hugo
 
-    # 启动静态文件服务器（后台运行）
-    echo "[*] 启动静态文件服务器 :8084 ..."
-    python3 -m http.server 8084 --directory "$SCRIPT_DIR/hugo_site/public" &
+    # 启动服务器（支持动态状态页）
+    echo "[*] 启动服务器 :8084 ..."
+    python3 scripts/server.py --port 8084 --directory "$SCRIPT_DIR/hugo_site/public" &
     SERVER_PID=$!
     echo "[*] 服务器 PID: $SERVER_PID"
 
@@ -199,9 +199,9 @@ run_autodev_loop() {
     echo "[*] 初始构建 Hugo 网站..."
     do_build_hugo
 
-    # 启动静态文件服务器（后台运行）
-    echo "[*] 启动静态文件服务器 :8084 ..."
-    python3 -m http.server 8084 --directory "$SCRIPT_DIR/hugo_site/public" &
+    # 启动服务器（支持动态状态页）
+    echo "[*] 启动服务器 :8084 ..."
+    python3 scripts/server.py --port 8084 --directory "$SCRIPT_DIR/hugo_site/public" &
     SERVER_PID=$!
     echo "[*] 服务器 PID: $SERVER_PID"
 

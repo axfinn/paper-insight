@@ -263,7 +263,13 @@ def main():
     # 构建
     if build_hugo_site(hugo_dir):
         print(f"\n[✓] 网站构建完成: {hugo_dir / 'public'}")
-        print(f"    本地预览: cd {hugo_dir} && hugo serve")
+
+        # 生成状态页面
+        try:
+            from status_page import main as update_status
+            update_status()
+        except Exception as e:
+            print(f"  [!] 状态页面更新失败: {e}")
 
 
 if __name__ == '__main__':
