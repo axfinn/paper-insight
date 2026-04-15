@@ -73,10 +73,19 @@ def copy_reports_to_hugo(base_dir: Path, hugo_dir: Path):
     today = datetime.now().strftime('%Y%m%d')
     count = 0
 
+    def copy_with_frontmatter(src: Path, dest: Path):
+        """复制报告，确保有 Hugo frontmatter"""
+        content = src.read_text(encoding='utf-8')
+        if not content.startswith('---'):
+            title = src.stem.replace('_', ' ')
+            date = datetime.fromtimestamp(src.stat().st_mtime).strftime('%Y-%m-%d')
+            content = f"---\ntitle: \"{title}\"\ndate: {date}\n---\n\n" + content
+        dest.write_text(content, encoding='utf-8')
+
     # 复制今日报告
     for report_file in reports_dir.glob(f"{today}_*.md"):
         dest = content_dir / report_file.name
-        shutil.copy2(report_file, dest)
+        copy_with_frontmatter(report_file, dest)
         count += 1
         print(f"  [*] 复制: {report_file.name}")
 
@@ -84,7 +93,7 @@ def copy_reports_to_hugo(base_dir: Path, hugo_dir: Path):
     for report_file in sorted(reports_dir.glob("*.md"), key=lambda x: x.stat().st_mtime, reverse=True)[:20]:
         dest = content_dir / report_file.name
         if not dest.exists():
-            shutil.copy2(report_file, dest)
+            copy_with_frontmatter(report_file, dest)
             count += 1
 
     print(f"[+] 复制了 {count} 个报告到 Hugo")
@@ -139,7 +148,7 @@ date: {today}
             index_content += f"\n### {cat}\n\n"
             for r in reports[:5]:
                 date = datetime.fromtimestamp(r.stat().st_mtime).strftime('%m-%d')
-                index_content += f"- [{r.stem}](reports/{r.name}) ({date})\n"
+                index_content += f"- [{r.stem}](/reports/{r.stem}/) ({date})\n"
 
     index_content += f"""
 
