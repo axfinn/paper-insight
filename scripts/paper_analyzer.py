@@ -47,7 +47,7 @@ def analyze_paper(paper: dict, industry: str, api_key: str = None) -> dict:
         base_url=config['api_url'] if config['api_url'] != 'https://api.anthropic.com/v1' else None
     )
 
-    prompt = f"""你是一位专业的行业研究员。请深度分析以下{industry}领域的论文，提取完整信息。**用中文回答**。
+    prompt = f"""你是一位专业的行业研究员。请深度分析以下{industry}领域的论文，提取完整信息。**全部用中文回答**。
 
 论文标题: {paper.get('title', 'N/A')}
 作者: {', '.join(paper.get('authors', [])[:5])}
@@ -55,22 +55,24 @@ def analyze_paper(paper: dict, industry: str, api_key: str = None) -> dict:
 发表日期: {paper.get('published', 'N/A')}
 期刊/会议: {paper.get('journal', 'N/A')}
 
-原始摘要:
+原始摘要（英文）:
 {paper.get('summary', 'N/A')}
 
 请深度分析并返回以下信息（JSON格式）：
 {{
-    "title": "论文标题",
-    "problem": "论文要解决什么问题？为什么这个问题重要？用中文回答。",
-    "background": "背景：之前的方法是什么，有什么局限性？用中文回答。",
-    "method": "本文的核心方法/技术是什么？具体创新点是什么？用中文回答。",
-    "novelty": "最大的创新点/突破是什么？相比之前工作的本质区别？用中文回答。",
-    "results": "实验结果如何？关键数据指标？用中文回答。",
-    "application": "实际应用场景和商业价值。用中文回答。",
-    "limitations": "论文的局限性/缺点/未解决的问题。用中文回答。",
-    "future": "未来改进方向和研究机会。用中文回答。",
-    "rating": "1-5分的行业影响力评分（5=必读，1=可忽略）",
-    "difficulty": "学习难度 1-5（1=入门级，5=专家级）",
+    "title": "论文标题（保留英文原标题）",
+    "title_zh": "论文标题中文翻译",
+    "summary_zh": "摘要中文翻译（完整翻译原文摘要）",
+    "problem": "论文要解决什么问题？为什么这个问题重要？",
+    "background": "背景：之前的方法是什么，有什么局限性？",
+    "method": "本文的核心方法/技术是什么？具体创新点是什么？",
+    "novelty": "最大的创新点/突破是什么？相比之前工作的本质区别？",
+    "results": "实验结果如何？关键数据指标？",
+    "application": "实际应用场景和商业价值。",
+    "limitations": "论文的局限性/缺点/未解决的问题。",
+    "future": "未来改进方向和研究机会。",
+    "rating": 4,
+    "difficulty": 3,
     "tags": ["相关领域标签1", "标签2", "标签3"],
     "must_read": true
 }}
@@ -154,6 +156,9 @@ def analyze_industry_papers(industry: str, papers: list, api_key: str = None) ->
 def generate_report(industry: str, papers: list) -> str:
     """生成 Markdown 报告"""
 
+    today_fmt = datetime.now().strftime('%Y-%m-%d')
+    now_fmt = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
     # 按评分排序（rating 可能是字符串）
     def get_rating(p):
         r = p.get('rating', 0)
@@ -169,9 +174,16 @@ def generate_report(industry: str, papers: list) -> str:
     analyzed = sum(1 for p in papers if p.get('analyzed'))
     must_read = sum(1 for p in papers if p.get('must_read'))
 
-    report = f"""# {industry} 论文情报
+    report = f"""---
+title: "{industry} 论文情报"
+date: "{today_fmt}"
+industry: "{industry}"
+summary: "收录 {total} 篇最新论文"
+---
 
-**生成时间**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+# {industry} 论文情报
+
+**生成时间**: {now_fmt}
 **抓取数量**: {total} 篇 | **分析完成**: {analyzed} 篇 | **必读**: {must_read} 篇
 
 ---
@@ -183,38 +195,47 @@ def generate_report(industry: str, papers: list) -> str:
     # 先输出必读论文
     for i, paper in enumerate([p for p in sorted_papers if p.get('must_read')], 1):
         if paper.get('analyzed'):
+            title_zh = paper.get('title_zh', '')
+            title_display = f"{paper.get('title', 'N/A')}"
+            if title_zh:
+                title_display += f"\n> {title_zh}"
             report += f"""### 🔥 {i}. {paper.get('title', 'N/A')}
+
+> **{paper.get('title_zh', '')}**
 
 | 属性 | 内容 |
 |------|------|
-| **评分** | {'⭐' * paper.get('rating', 0)} ({paper.get('rating', 0)}/5) |
-| **难度** | {'🔒' * paper.get('difficulty', 0)} ({paper.get('difficulty', 0)}/5) |
+| **评分** | {'⭐' * int(paper.get('rating', 0))} ({paper.get('rating', 0)}/5) |
+| **难度** | {'🔒' * int(paper.get('difficulty', 0))} ({paper.get('difficulty', 0)}/5) |
 | **作者** | {', '.join(paper.get('authors', [])[:3])} |
 | **来源** | {paper.get('source', 'N/A')} |
 | **发表** | {paper.get('published', 'N/A')} |
 
-### 研究问题
+#### 摘要（中文）
+{paper.get('summary_zh', paper.get('summary', 'N/A'))}
+
+#### 研究问题
 {paper.get('problem', 'N/A')}
 
-### 背景
+#### 背景
 {paper.get('background', 'N/A')}
 
-### 核心方法
+#### 核心方法
 {paper.get('method', 'N/A')}
 
-### 关键创新点
+#### 关键创新点
 {paper.get('novelty', 'N/A')}
 
-### 实验结果
+#### 实验结果
 {paper.get('results', 'N/A')}
 
-### 应用场景
+#### 应用场景
 {paper.get('application', 'N/A')}
 
-### 局限性
+#### 局限性
 {paper.get('limitations', 'N/A')}
 
-### 未来方向
+#### 未来方向
 {paper.get('future', 'N/A')}
 
 **标签**: {', '.join(paper.get('tags', []))}
@@ -262,20 +283,6 @@ def generate_report(industry: str, papers: list) -> str:
             rating = paper.get('rating', 0) if paper.get('analyzed') else '⏳'
             diff = paper.get('difficulty', 0) if paper.get('analyzed') else '?'
             report += f"| {i} | {title} | {rating} | {diff} | {paper.get('source', 'N/A')} |\n"
-
-    return report
-
-    # 其他论文列表
-    if len(sorted_papers) > 5:
-        report += f"""## 其他论文
-
-| # | 标题 | 评分 | 来源 | 发表日期 |
-|---|------|------|------|----------|
-"""
-        for i, paper in enumerate(sorted_papers[5:], 6):
-            title = paper.get('title', 'N/A')[:40] + '...' if len(paper.get('title', '')) > 40 else paper.get('title', 'N/A')
-            rating = paper.get('rating', 0) if paper.get('analyzed') else '⏳'
-            report += f"| {i} | {title} | {rating} | {paper.get('source', 'N/A')} | {paper.get('published', 'N/A')} |\n"
 
     return report
 
