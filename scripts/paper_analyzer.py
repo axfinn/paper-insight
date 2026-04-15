@@ -214,6 +214,13 @@ summary: "收录 {total} 篇最新论文"
 #### 摘要（中文）
 {paper.get('summary_zh', paper.get('summary', 'N/A'))}
 
+<details>
+<summary>原文摘要（English Abstract）</summary>
+
+{paper.get('summary', 'N/A')}
+
+</details>
+
 #### 研究问题
 {paper.get('problem', 'N/A')}
 
@@ -254,15 +261,24 @@ summary: "收录 {total} 篇最新论文"
 """
         for i, paper in enumerate(other_important, 1):
             if paper.get('analyzed'):
+                title_zh = paper.get('title_zh', '')
                 report += f"""### {i}. {paper.get('title', 'N/A')}
+{">" + " **" + title_zh + "**" if title_zh else ""}
 
-**评分**: {'⭐' * paper.get('rating', 0)} ({paper.get('rating', 0)}/5) | **难度**: {'🔒' * paper.get('difficulty', 0)}
+**评分**: {'⭐' * int(paper.get('rating', 0))} ({paper.get('rating', 0)}/5) | **难度**: {'🔒' * int(paper.get('difficulty', 0))}
 
-**问题**: {paper.get('problem', 'N/A')[:150]}...
+**问题**: {paper.get('problem', 'N/A')[:200]}
 
-**方法**: {paper.get('method', 'N/A')[:150]}...
+**方法**: {paper.get('method', 'N/A')[:200]}
 
-**创新点**: {paper.get('novelty', 'N/A')[:150]}...
+**创新点**: {paper.get('novelty', 'N/A')[:200]}
+
+<details>
+<summary>原文摘要（English Abstract）</summary>
+
+{paper.get('summary', 'N/A')}
+
+</details>
 
 [原文链接]({paper.get('url', '#')})
 

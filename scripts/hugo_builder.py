@@ -255,6 +255,11 @@ title = "Paper Insight | 论文情报站"
 publishDir = "public"
 disableHugoGeneratorInject = true
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [frontmatter]
 date = ["date", "publishDate"]
 """
