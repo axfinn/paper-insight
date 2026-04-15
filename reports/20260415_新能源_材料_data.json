@@ -1,0 +1,195 @@
+{
+  "industry": "新能源/材料",
+  "date": "20260415",
+  "papers": [
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2601.19076v1",
+      "title": "C2NP: A Benchmark for Learning Scale-Dependent Geometric Invariances in 3D Materials Generation",
+      "summary": "Generative models for materials have achieved strong performance on periodic bulk crystals, yet their ability to generalize across scale transitions to finite nanostructures remains largely untested. We introduce Crystal-to-Nanoparticle (C2NP), a systematic benchmark for evaluating generative models when moving between infinite crystalline unit cells and finite nanoparticles, where surface effects and size-dependent distortions dominate. C2NP defines two complementary tasks: (i) generating nanoparticles of specified radii from periodic unit cells, testing whether models capture surface truncation and geometric constraints; and (ii) recovering bulk lattice parameters and space-group symmetry from finite particle configurations, assessing whether models can infer underlying crystallographic order despite surface perturbations. Using diverse materials as a structurally consistent testbed, we construct over 170,000 nanoparticle configurations by carving particles from supercells derived from DFT-relaxed crystal unit cells, and introduce size-based splits that separate interpolation from extrapolation regimes. Experiments with state-of-the-art approaches, including diffusion, flow-matching, and variational models, show that even when losses are low, models often fail geometrically under distribution shift, yielding large lattice-recovery errors and near-zero joint accuracy on structure and symmetry. Overall, our results suggest that current methods rely on template memorization rather than scalable physical generalization. C2NP offers a controlled, reproducible framework for diagnosing these failures, with immediate applications to nanoparticle catalyst design, nanostructured hydrides for hydrogen storage, and materials discovery. Dataset and code are available at https://github.com/KurbanIntelligenceLab/C2NP.",
+      "published": "2026-01-27",
+      "authors": [
+        "Can Polat",
+        "Erchin Serpedin",
+        "Mustafa Kurban",
+        "Hasan Kurban"
+      ],
+      "categories": [
+        "cond-mat.mtrl-sci",
+        "cond-mat.mes-hall",
+        "cs.LG",
+        "quant-ph"
+      ],
+      "url": "http://arxiv.org/abs/2601.19076v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2512.05938v1",
+      "title": "Adsorption energies are necessary but not sufficient to identify good catalysts",
+      "summary": "As a core technology for green chemical synthesis and electrochemical energy storage, electrocatalysis is central to decarbonization strategies aimed at combating climate change. In this context, computational and machine learning driven catalyst discovery has emerged as a major research focus. These approaches frequently use the thermodynamic overpotential, calculated from adsorption free energies of reaction intermediates, as a key parameter in their analysis. In this paper, we explore the large-scale applicability of such overpotential estimates for identifying good catalyst candidates by using datasets from the Open Catalyst Project (OC20 and OC22). We start by quantifying the uncertainty in predicting adsorption energies using \\textit{ab initio} methods and find that $\\sim$0.3-0.5 eV is a conservative estimate for a single adsorption energy prediction. We then compute the overpotential of all materials in the OC20 and OC22 datasets for the hydrogen and oxygen evolution reactions. We find that while the overpotential allows the identification of known good catalysts such as platinum and iridium oxides, the uncertainty is large enough to misclassify a broad fraction of the datasets as ``good'', which limits its value as a screening criterion. These results question the reliance on overpotential estimation as a primary evaluation metric to sort through catalyst candidates and calls for a shift in focus in the computational catalysis and machine learning communities towards other metrics such as synthesizability, stability, lifetime or affordability.",
+      "published": "2025-12-05",
+      "authors": [
+        "Shahana Chatterjee",
+        "Alexander Davis",
+        "Lena Podina",
+        "Divya Sharma",
+        "Yoshua Bengio",
+        "Alexandre Duval",
+        "Oleksandr Voznyy",
+        "Alex Hernández-Garcia",
+        "David Rolnick",
+        "Félix Therrien"
+      ],
+      "categories": [
+        "cond-mat.mtrl-sci",
+        "physics.chem-ph"
+      ],
+      "url": "http://arxiv.org/abs/2512.05938v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2510.02142v1",
+      "title": "Catalyst GFlowNet for electrocatalyst design: A hydrogen evolution reaction case study",
+      "summary": "Efficient and inexpensive energy storage is essential for accelerating the adoption of renewable energy and ensuring a stable supply, despite fluctuations in sources such as wind and solar. Electrocatalysts play a key role in hydrogen energy storage (HES), allowing the energy to be stored as hydrogen. However, the development of affordable and high-performance catalysts for this process remains a significant challenge. We introduce Catalyst GFlowNet, a generative model that leverages machine learning-based predictors of formation and adsorption energy to design crystal surfaces that act as efficient catalysts. We demonstrate the performance of the model through a proof-of-concept application to the hydrogen evolution reaction, a key reaction in HES, for which we successfully identified platinum as the most efficient known catalyst. In future work, we aim to extend this approach to the oxygen evolution reaction, where current optimal catalysts are expensive metal oxides, and open the search space to discover new materials. This generative modeling framework offers a promising pathway for accelerating the search for novel and efficient catalysts.",
+      "published": "2025-10-02",
+      "authors": [
+        "Lena Podina",
+        "Christina Humer",
+        "Alexandre Duval",
+        "Victor Schmidt",
+        "Ali Ramlaoui",
+        "Shahana Chatterjee",
+        "Yoshua Bengio",
+        "Alex Hernandez-Garcia",
+        "David Rolnick",
+        "Félix Therrien"
+      ],
+      "categories": [
+        "cs.LG",
+        "cond-mat.mtrl-sci"
+      ],
+      "url": "http://arxiv.org/abs/2510.02142v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2501.04516v1",
+      "title": "Catalytic activity of Al-Cu-Fe-Ni-Cr high entropy alloy",
+      "summary": "Magnesium hydride (MgH2) is a promising material for hydrogen storage because of its abundance and beneficial properties, such as high storage capacity and cost-effectiveness under mild conditions. Despite of these benefits, MgH2 unfavorable thermodynamics and kinetics make it difficult to use in real applications. In this work, the hydrogen storage properties of MgH2have been improved using Al-Cu-Fe-Ni-Cr high entropy alloy (HEA) based catalysts, which has been synthesized via mechanical alloying. The experimental findings show that the beginning desorption temperature of MgH2significantly lowered from 425°C to 180°C by adding 5 wt. % Al-Cu-Fe-Ni-Cr HEA in MgH2. Moreover, the catalyst shows enhanced kinetics, attaining 7.3 wt. % hydrogen absorption in 3 minutes at 320°C with 15 atm hydrogen pressure, and ~5 wt. % desorption in 6 minutes at 320°C. These results highlight, how much lower its desorption temperature is than those of other well-known catalysts. Over a span of 25 cycles, MgH2 catalyzed by Al-Cu-Fe-Ni-Cr HEA exhibits remarkable cyclic stability with negligible fluctuations (~ 0.05 wt. %).After a thorough characterization of the materials, a workable catalytic mechanism for HEA was proposed in light of the results.",
+      "published": "2025-01-08",
+      "authors": [
+        "Yogesh Kumar Yadav",
+        "Mohammad Abu Shaz",
+        "Thakur Prasad Yadav"
+      ],
+      "categories": [
+        "cond-mat.mtrl-sci"
+      ],
+      "url": "http://arxiv.org/abs/2501.04516v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2309.15637v1",
+      "title": "Platinum-Decorated Graphene: Experimental Insight into Growth Mechanisms and Hydrogen Adsorption Properties",
+      "summary": "The potential of graphene for hydrogen storage, coupled with the established role of Platinum as a catalyst for the hydrogen evolution reaction and the spillover effect, makes Pt-functionalized graphene a promising candidate for near-ambient hydrogen storage. This paper focuses on examining the process of Pt cluster formation on epitaxial graphene and assesses the suitability of the system as hydrogen storage material. Scanning tunneling microscopy unveils two primary pathways for Pt cluster growth. In the initial phase, up to ~1 ML of Pt coverage, Pt tends to randomly disperse and cover the graphene surface, while the cluster height remains essentially unchanged. Beyond a coverage of 3 ML, the nucleation of new layers on existing clusters becomes predominant. Then, the clusters mainly grow in height. Thermal desorption spectroscopy on hydrogenated Pt-decorated graphene reveals the presence of multiple hydrogen adsorption mechanisms, manifested as two Gaussian peaks superimposed on a linearly increasing background. We attribute the first peak at 150°C to hydrogen physisorbed on the surface of Pt clusters. The second peak at 430°C is attributed to chemisorption of hydrogen on the surface of the clusters, while the linearly increasing background is assigned to hydrogen bonded in the bulk of the Pt clusters. These measurements demonstrate the ability of Pt-functionalized graphene to store molecular hydrogen at temperatures that are high enough for stable hydrogen binding at room temperature.",
+      "published": "2023-09-27",
+      "authors": [
+        "Letizia Ferbel",
+        "Stefano Veronesi",
+        "Ylea Vlamidis",
+        "Antonio Rossi",
+        "Leonardo Sabattini",
+        "Camilla Coletti",
+        "Stefan Heun"
+      ],
+      "categories": [
+        "cond-mat.mtrl-sci"
+      ],
+      "url": "http://arxiv.org/abs/2309.15637v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2307.12240v1",
+      "title": "High Entropy Alloy Catalytic Action on MgH2 Hydrogen Storage Materials",
+      "summary": "Magnesium hydride (MgH2) is the mostly used material for solid-state hydrogen storage. However, their slow kinetics and highly unfavorable thermodynamics make them unsuitable for the practical applications. The current study describes the unusual catalytic action of a new class of catalyst, a high-entropy alloy (HEA) of Al20Cr16Mn16Fe16Co16Ni16, on the de/re-hydrogenation properties of MgH2. The onset desorption temperature of MgH2 is reduced significantly from 376 °C (for pristine MgH2) to 338 degC when it is catalyzed with a HEA-based catalyst. On the other hand, a fast de/re-hydrogenation kinetics of MgH2 was observed during the addition of HEA-based catalyst. It ab sorbs 6.1 wt% of hydrogen in just 2 minutes at a temperature of 300 degC under 10 atm hydrogen pressure and desorbs ~ 5.4 wt% within 40 minutes. At moderate temperatures and low pressure, the HEA-based catalyst reduced desorption temperatures and improved re-hydrogenation kinetics. Even after 25 cycles of de/re-hydrogenation, the storage capacity of MgH2 catalyzed with the leached version of HEA degrades negligibly.",
+      "published": "2023-07-23",
+      "authors": [
+        "S. K. Verma",
+        "S. S. Mishra",
+        "N. K. Mukhopadhyay",
+        "T. P. Yadav"
+      ],
+      "categories": [
+        "cond-mat.mtrl-sci"
+      ],
+      "url": "http://arxiv.org/abs/2307.12240v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2303.10548v1",
+      "title": "Exploring the Surface Segregation of Rh Dopant in PtNi Nanoparticles through Atom Probe Tomography Analysis",
+      "summary": "Proton exchange membrane fuel cells hold promise as energy conversion devices for hydrogen-based power generation and storage. However, the slow kinetics of the oxygen reduction at the cathode imposes the need for highly active catalysts, typically Pt or Pt-based, with a large available area. The scarcity of Pt increases deployment and operational cost, driving the development of novel highly-active material systems. As an alternative, Rh-doped PtNi nanoparticle has been suggested as promising oxygen reduction catalyst, but the 3D distributions of constituent elements in the nanoparticles have remained unclear, making it difficult to guide property optimization. Here, a combination of advanced microscopy and microanalysis techniques is used to study the Rh distribution in the PtNi nanoparticles, and Rh surface segregation is revealed, even with an overall Rh content below 2 at. %. Our findings suggest that doping and surface chemistry must be carefully investigated to establish a clear link with catalytic activity can truly be established.",
+      "published": "2023-03-19",
+      "authors": [
+        "Se-Ho Kim",
+        "Hosun Jun",
+        "Kyuseon Jang",
+        "Pyuck-Pa Choi",
+        "Baptiste Gault",
+        "Chanwon Jung"
+      ],
+      "categories": [
+        "cond-mat.mtrl-sci"
+      ],
+      "url": "http://arxiv.org/abs/2303.10548v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2301.02897v1",
+      "title": "Catalytic action of two-dimensional layered materials (WS2, and MoS2) on hydrogen sorption properties of MgH2",
+      "summary": "The present study reports the catalytic action of two-dimensional (2D) layered materials (MoS2 and WS2) for improving the de/re-hydrogenation kinetics of MgH2. The MgH2 start desorbing at 277 C with a hydrogen storage capacity of 5.95 wt% in the presence of WS2 catalyst whereas onset desorption temperature of MgH2 catalyzed by MoS2 is 330 C. The MgH2-WS2 absorbed hydrogen ~ 3.72 wt% within 1.3 minutes at 300 C under 13 atm hydrogen pressure and it desorbed ~5.57 wt% within 20 minutes at 300 C under 1 atm hydrogen pressure. We have performed 25 cycles of dehydrogenation (under 1 atm hydrogen pressure at 300 C) and re-hydrogenation (under 13 atm hydrogen pressure at 300 °C) to ensure cyclic stability of catalyzed version of MgH2 where MgH2-WS2 shows better cyclic stability than MgH2-MoS2. MgH2-WS2 also shows the lower reaction activation energy ~117 kJ/mol as compare to other catalyzed and uncatalyzed samples. On the other hand, these catalysts (WS2 and MoS2) do not have any impact on the thermodynamical parameters that is change in enthalpy.",
+      "published": "2023-01-07",
+      "authors": [
+        "S. K. Verma",
+        "M. A. Shaz",
+        "T. P. Yadav"
+      ],
+      "categories": [
+        "cond-mat.mtrl-sci"
+      ],
+      "url": "http://arxiv.org/abs/2301.02897v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2111.03569v1",
+      "title": "Comprehensive understanding of H adsorption on MoO3 from systematic ab initio simulations",
+      "summary": "During many of its applications (especially as a catalyst support material), MoO3 acts as a medium for hydrogen storage via hydrogen spillover (H atom donation from proton and electron sources to a support), for which the energetics of H atoms on MoO3 are of importance. Despite the seeming simplicity of hydrogen spillover, previously reported ab initio results for the H adsorption on MoO3 contradict both experimental work and other ab initio results. In the present study, we resolve these discrepancies and provide a comprehensive ab initio understanding of H adsorption for MoO3 in the bulk and on the surface. To this end, we systematically investigate various exchange-correlation functionals and various H concentrations, and we carefully track the various relevant H positions. For a dilute H concentration, the asymmetric oxygen site (Oa) is found to be energetically the most favorable. With increasing H content, the difference of the H adsorption energies between the terminal (Ot) and the Oa sites becomes smaller. Previous contradictions are ascribed mostly to the disregard of the H position along the Oa-Oa zig-zag chains in the intrabilayer region. Using the modern non-empirical strongly-constrained and appropriately-normed (SCAN) meta-generalized gradient approximation (GGA), the dilute-limit H adsorption energies are obtained as -2.89 eV/(H atom) and -2.97 eV/(H atom) in the bulk and on the surface, respectively, and the activation energy of H diffusion between the Oa sites as 0.11-0.15 eV/(H atom), consistent with previous experiments.",
+      "published": "2021-11-05",
+      "authors": [
+        "Yuji Ikeda",
+        "Deven Estes",
+        "Blazej Grabowski"
+      ],
+      "categories": [
+        "cond-mat.mtrl-sci"
+      ],
+      "url": "http://arxiv.org/abs/2111.03569v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2104.00141v2",
+      "title": "Plasmonic enhancement of molecular hydrogen dissociation on metallic magnesium nanoclusters",
+      "summary": "Light-driven plasmonic enhancement of chemical reactions on metal catalysts is a promising strategy to achieve highly selective and efficient chemical transformations. The study of plasmonic catalyst materials has traditionally focused on late transition metals such as Au, Ag, and Cu. In recent years, there has been increasing interest in the plasmonic properties of a set of earth-abundant elements such as Mg, which exhibit interesting hydrogenation chemistry with potential applications in hydrogen storage. This work explores the optical, electronic, and catalytic properties of a set of metallic Mg nanoclusters with up to 2057 atoms using time-dependent density functional tight-binding and density functional theory calculations. Our results show that Mg nanoclusters are able to produce highly energetic hot electrons with energies of up to 4 eV. By electronic structure analysis, we find that these hot electrons energetically align with electronic states of physisorbed molecular hydrogen, occupation of which by hot electrons can promote the hydrogen dissociation reaction. We also find that the reverse reaction, hydrogen evolution on metallic Mg, can potentially be promoted by hot electrons, but following a different mechanism. Thus, from a theoretical perspective, Mg nanoclusters display very promising behaviour for their use in light promoted storage and release of hydrogen.",
+      "published": "2021-03-31",
+      "authors": [
+        "Oscar A. Douglas-Gallardo",
+        "Connor L. Box",
+        "Reinhard J. Maurer"
+      ],
+      "categories": [
+        "cond-mat.mtrl-sci"
+      ],
+      "url": "http://arxiv.org/abs/2104.00141v2"
+    }
+  ],
+  "generated_at": "2026-04-15T16:17:54.415359"
+}

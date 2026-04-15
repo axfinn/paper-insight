@@ -1,0 +1,216 @@
+{
+  "industry": "半导体/芯片",
+  "date": "20260415",
+  "papers": [
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2604.12889v1",
+      "title": "Building reliable 3D photonic integrated circuits and cavities at the wafer scale",
+      "summary": "Three-dimensional (3D) photonic integrated circuits (PIC) are emerging as an indispensable scheme for high density and multifunctional photonic systems. However, the wafer-scale scaling of PICs towards a 3D configuration is constrained by two key factors: (i) the trade-off between inter-layer taper efficiency and footprint, and (ii) wafer-scale uniformity of inter-layer transition loss. In this work, we introduce etch-back assisted chemical mechanical polishing (E-CMP) to achieve high wafer-scale uniformity of the spacer layer. Moreover, we break the efficiency-footprint trade-off by demonstrating a novel $κ$-engineered taper, achieving a reliability metric that is 75\\% higher than the traditional linearly tapered structure. Building on these design and fabrication developments, we enable reliable 3D PICs with typical loss of 0.077 and 0.068 dB/cm on two silicon nitride (SiN) waveguide layers and typical 3D transition loss as low as 6 mdB. Furthermore, the low 3D transition loss enables the first class of 3D high-Q optical cavities occupying two distinct device layers, providing new design space for high-Q optical cavities. The scalable fabrication process and design methodology provide routes for wafer-scale reliable 3D PICs that are promising in a series of applications ranging from photonic interconnects and computing networks to high-density photonic sensors and nonlinear photonics.",
+      "published": "2026-04-14",
+      "authors": [
+        "Yuhao Huang",
+        "Yunqi Fu",
+        "Yu Xia",
+        "Yuemin Li",
+        "Zheng Li",
+        "Yaoran Huang",
+        "Zhaoting Geng",
+        "Mingfei Liu",
+        "Chao Xiang"
+      ],
+      "categories": [
+        "physics.optics"
+      ],
+      "url": "http://arxiv.org/abs/2604.12889v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2604.12814v1",
+      "title": "Low-confinement silicon nitride waveguides manufactured via direct glass bonding",
+      "summary": "The integration of active light-emitting elements into planar photonic circuits on a silicon nitride platform remains challenging due to material incompatibilities and high-temperature processing. Proposed hybrid method embeds monodisperse luminescent particles into lithographically defined wells above a 200 nm-thick silicon nitride taper coupler. A fabrication process involving wells etching, particle deposition, and planarization enables precise integration while maintaining waveguide integrity. When pumped at 950 nm the particles emit across 1500--1600 nm, peaking at 1532 nm (FWHM 60 nm), covering the optical telecommunication C-band. Numerical simulations yield an average coupling efficiency of 0.25% into the fundamental waveguide mode, suggesting significant potential for further device optimization. The approach provides a scalable route for integrating broadband telecommunications emitters on a silicon nitride platform.",
+      "published": "2026-04-14",
+      "authors": [
+        "Mikhail V. Tsvetkov",
+        "Dmitry V. Obydennov",
+        "Alexandr S. Rykov",
+        "Alexandr R. Shevchenko",
+        "Maxim V. Shibalov",
+        "Ivan A. Filippov",
+        "Stepan D. Perov",
+        "Michael A. Tarkhov"
+      ],
+      "categories": [
+        "physics.optics"
+      ],
+      "url": "http://arxiv.org/abs/2604.12814v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2604.11649v1",
+      "title": "High-Endurance, Low-loss Sb2Se3 Optical Switches on Silicon Nitride using Transparent Conductive Heaters",
+      "summary": "We report an electrically actuated, low-loss non-volatile optical switch based on the phase-change material (PCM) Sb2Se3 integrated on a silicon nitride (Si3N4) platform. The device is fabricated using an 8-inch wafer-scale process flow, demonstrating the feasibility of scalable manufacturing for photonic integrated circuits (PICs). By employing transparent indium tin oxide (ITO) micro-heaters, reversible switching between the amorphous and crystalline states is achieved with an extinction ratio of 25~dB and an endurance exceeding 140 million switching cycles, establishing a new benchmark for non-volatile integrated photonic memory and reconfigurable architectures. Furthermore, multi-level operation beyond 6 bits can be repeatably demonstrated by tailoring the electrical pulse widths, enabling precise control of the optical phase. These results highlight a scalable and energy-efficient platform for high-density programmable and non-volatile photonic integrated systems.",
+      "published": "2026-04-13",
+      "authors": [
+        "Xingshi Yu",
+        "Ipsita Chakraborty",
+        "Isaac Johnson",
+        "Savvas I. Raptis",
+        "Qianbin Luo",
+        "Thalia Dominguez Bucio",
+        "Elliot Sandell",
+        "Chris Vagionas",
+        "Ioannis Zeimpekis",
+        "Amalia Miliou",
+        "Nikos Pleros",
+        "Frederic Gardes"
+      ],
+      "categories": [
+        "physics.optics"
+      ],
+      "url": "http://arxiv.org/abs/2604.11649v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2604.11266v1",
+      "title": "Multiplexed cryo-CMOS control of an isolated double quantum dot",
+      "summary": "Scalable spin-based quantum computing demands precise and stable control of a large number of gate-defined quantum dots while minimizing wiring complexity and thermal load. Control architectures based on sample-and-hold (SH) multiplexing techniques offer a promising solution by enabling sequential programming of several gate voltages using a limited number of input lines. However, the compatibility of such dynamic voltage refreshing with the stringent stability, noise, and speed requirements of quantum dot operation is an active subject of study. Here we experimentally demonstrate that a multiplexing cryo-CMOS circuit can reliably bias a silicon double quantum dot (DQD) at 0.5K. Exploiting the isolated regime, we show deterministic loading and isolation of four electrons and stable access to all five charge configurations from (4,0) to (0,4), despite the sequential voltage refreshing. We further demonstrate rapid voltage pulsing across an inter-dot transition, resolving single-electron tunneling events and stochastic switching at the (1,3)-(0,4) transition. These results confirm that SH-based multiplexed control is compatible with both static biasing and pulsing of isolated quantum dots, representing an important milestone toward scalable cryogenic control architectures for large-scale spin-qubit processors.",
+      "published": "2026-04-13",
+      "authors": [
+        "Mathieu Darnas",
+        "Mathilde Ouvrier-Buffet",
+        "Antoine Faurie",
+        "Jean-Baptiste Casanova",
+        "Benoit Bertrand",
+        "Candice Thomas",
+        "Jean Charbonnier",
+        "Jean-Philippe Michel",
+        "Bruna Cardoso Paz",
+        "Yvain Thonnart",
+        "Franck Badets",
+        "Franck Balestro",
+        "Matias Urdampilleta",
+        "Tristan Meunier",
+        "Baptiste Jadot"
+      ],
+      "categories": [
+        "cond-mat.mes-hall"
+      ],
+      "url": "http://arxiv.org/abs/2604.11266v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2604.09833v1",
+      "title": "Beyond Silicon: Materials, Mechanisms, and Methods for Physical Neural Computing",
+      "summary": "Physical implementations of neural computation now extend far beyond silicon hardware, encompassing substrates such as memristive devices, photonic circuits, mechanical metamaterials, microfluidic networks, chemical reaction systems, and living neural tissue. By exploiting intrinsic physical processes such as charge transport, wave interference, elastic deformation, mass transport, and biochemical regulation, these substrates can realize neural inference and adaptation directly in matter. As silicon GPU-centered AI faces growing energy and data-movement constraints, physical neural computation is becoming increasingly relevant as a complementary path beyond conventional digital accelerators. This trend is driven in particular by pervasive intelligence, i.e., the deployment of on-device and edge AI across large numbers of resource-constrained systems. In such settings, co-locating computation with sensing and memory can reduce data shuttling and improve efficiency. Meanwhile, physical neural approaches have emerged across disparate disciplines, yet progress remains fragmented, with limited shared terminology and few principled ways to compare platforms. This survey unifies the field by mapping neural primitives to substrate-specific mechanisms, analyzing architectural and training paradigms, and identifying key engineering constraints including scalability, precision, programmability, and I/O interfacing overhead. To enable cross-domain comparison, we introduce a first-order benchmarking scheme based on standardized static and dynamic tasks and physically interpretable performance dimensions. We show that no single substrate dominates across the considered dimensions; instead, physical neural systems occupy complementary operating regimes, enabling applications ranging from ultrafast signal processing and in-memory inference to embodied control and in-sample biochemical decision making.",
+      "published": "2026-04-10",
+      "authors": [
+        "Stefan Fischer",
+        "Nihat Ay",
+        "Olaf Landsiedel",
+        "Esfandiar Mohammadi",
+        "Sebastian Otte",
+        "Bernd-Christian Renner",
+        "Nele Rußwinkel"
+      ],
+      "categories": [
+        "cs.NE",
+        "cs.ET"
+      ],
+      "url": "http://arxiv.org/abs/2604.09833v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2604.08472v1",
+      "title": "High-efficiency graphene-silicon slot-waveguide microring modulator at 1.5 μm and 2 μm wavelength bands",
+      "summary": "Electro-optic (E/O) modulators are crucial for optical communication but face a trade-off between modulation bandwidth and efficiency. A small footprint could reduce the capacitance and increase the bandwidth, however, this usually results in a low modulation efficiency. Here, we present an integrated E/O modulator that simultaneously achieves wideband large bandwidth and high modu- lation efficiency operation by embedding a partially overlapped double-layer graphene on a compact silicon slot waveguide microring resonator. At 1550 nm, the graphene-silicon slot-waveguide demon- strates a high phase modulation efficiency of Vπ L = 220 V μm, and the corresponding microring modulator has a large bandwidth of over 70 GHz, a compact active length of 10 μm, and an optical modulation amplitude (OMA) of -1.97 dBm under a 3-V voltage swing. The modulator operates at a data rate of 50 Gbit/s with an open eye diagram under a 2-V Vpp RF drive voltage. The graphene modulator operation is broadband, and we also characterize its performance at 2 μm wavelength band. At 2 μm wavelength band, the microring modulator has a large bandwidth of over 20 GHz, an OMA of -3.36 dBm under a 6-V voltage swing, and an open eye diagram at 20 Gbit/s with a 2-V Vpp RF drive voltage. The difference in performance is caused by the bandwidth limit of the 2 μm wavelength band measurement setup. The broadband, large bandwidth, compact, highly effi- cient, and energy efficient graphene E/O modulator has the potential to enable large-scale graphene photonic integrated circuits, facilitating a broad range of applications such as optical interconnects, optical neural networks, and programmable photonic circuits.",
+      "published": "2026-04-09",
+      "authors": [
+        "Chao Luan",
+        "Deming Kong",
+        "Yong Liu",
+        "Yunhong Ding",
+        "Hao Hu"
+      ],
+      "categories": [
+        "physics.optics"
+      ],
+      "url": "http://arxiv.org/abs/2604.08472v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2604.04213v1",
+      "title": "Area Optimization of Open-Source Low-Power INA in 130nm CMOS using Hybrid Mixed-Variable PSO",
+      "summary": "As open-source silicon initiatives democratize access to integrated circuit development using multi-project environments, silicon area has become a premium resource. However, minimizing this layout area traditionally forces designers to compromise on core performance specifications. To address this challenge, this paper presents an open-source framework based on a hybrid mixed-variable particle swarm optimization algorithm and the gm/ID methodology to minimize the layout area of complex analog circuits while meeting design requirements. The framework's efficacy is demonstrated by designing a low-power instrumentation amplifier that achieves a 90.33% reduction in gate area over existing implementations.",
+      "published": "2026-04-05",
+      "authors": [
+        "Avishka Herath",
+        "Chanula Luckshan",
+        "Lochana Katugaha",
+        "Udara Mendis",
+        "Kithmin Wickremasinghe"
+      ],
+      "categories": [
+        "eess.SY"
+      ],
+      "url": "http://arxiv.org/abs/2604.04213v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2604.03468v1",
+      "title": "Silicon Photonics-based Heterodyne Interferometric Imager for free-space imaging",
+      "summary": "This paper reports on the design, fabrication, and demonstration of a silicon photonics based heterodyne interferometric imaging system. The photonic integrated circuit (PIC) can perform one-dimensional spectroscopy for unique input spectrums using a single baseline within its 91 available baselines. The PIC uses polarization diversifying gratings to separate incoming light into two distinct polarizations, an on-chip 2x4 optical hybrid, and a strong local oscillator (LO) to perform the heterodyne measurements. The optical hybrids combine the input signals with the LO and splitting them into 2 components pairs for phase sensitive measurements. Furthermore, the PIC can perform 2-D image reconstruction by combining many baseline pairs to measure the visibility of a simple target. These demonstrations show the PIC's capabilities for 1-D spectroscopy and 2-D imaging applications.",
+      "published": "2026-04-03",
+      "authors": [
+        "Humphry Chen",
+        "Mingye Fu",
+        "Shun-Hung Lee",
+        "Shelbe Timothy",
+        "Lawrence Shing",
+        "Gopal Vasudevan",
+        "Tony Kowalczyk",
+        "Neal Hurlburt",
+        "Sung-Joo Ben Yoo"
+      ],
+      "categories": [
+        "physics.optics",
+        "astro-ph.IM"
+      ],
+      "url": "http://arxiv.org/abs/2604.03468v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2604.02551v1",
+      "title": "Construction and characterisation of the DarkSide-20k veto silicon photo-multiplier tiles",
+      "summary": "Silicon photo-multipliers (SiPMs) are state-of-the-art sensors capable of detecting a single photoelectron under cryogenic conditions, with potentially lower radioactivity than widely used photomultiplier tubes. The DarkSide-20k experiment, designed to perform direct dark matter searches using liquid argon as the target material, employs SiPM technology to detect interactions in the active detector volumes, including the central dual-phase Time Projection Chamber and the Inner and Outer Veto volumes. The vetoes are designed to discriminate against radiogenic neutron and cosmic muon backgrounds associated with the dark matter search.   This paper describes the completed production and test protocols for the \"Veto Tiles\" (called vTiles, arrays of 24 SiPMs integrated on a printed circuit board providing the power distribution and signal amplification); 16 vTiles are grouped into \"Veto Photo-Detector Units\" to instrument the Inner Veto volume. Each vTile underwent detailed testing at room and cryogenic temperatures, confirming stable operation, high signal-to-noise ratio, and low radioactive contamination, demonstrating the robustness of the proposed design for cryogenic conditions. The final production yield exceeded 87%, surpassing the 80% requirement and corresponding to 1920 Veto Tiles to populate 120 Veto Photo-Detector Units, plus an additional 6% as spares.",
+      "published": "2026-04-02",
+      "authors": [
+        "DarkSide-20k collaboration"
+      ],
+      "categories": [
+        "physics.ins-det",
+        "hep-ex"
+      ],
+      "url": "http://arxiv.org/abs/2604.02551v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2604.00138v1",
+      "title": "Quantum memory on a nanophotonic silicon chip",
+      "summary": "Integrated photonic circuits offer great promise for quantum technologies. However, due to the rapid propagation of light, many envisioned applications require efficient on-chip quantum memories with a programmable delay, compact footprint, and high fidelity. Implementing this based on standard semiconductor processing technology is an outstanding challenge. Here, we realize such memories using erbium-doped silicon waveguides, fabricated as part of a multi-wafer project by a nanophotonic foundry. We demonstrate light storage with a $44.2(9)\\ \\text{MHz}$ bandwidth and a programmable delay exceeding $1\\ μ\\text{s}$ in a device with a footprint of only $1.5\\times 10^{-2}\\ \\text{mm}^2$, outperforming on-chip delay lines by many orders of magnitude. The phase of the read-out light field is preserved with a visibility of $91.3(30)\\ \\%$. The efficiency of $1.89(28)\\times 10^{-8}$ can be improved in future devices through resonator enhancement and higher dopant concentrations. With this, the demonstrated approach will pave the way towards applications in photonic quantum computing based on scalable silicon processing technology.",
+      "published": "2026-03-31",
+      "authors": [
+        "Stephan Rinner",
+        "Jonas Schmitt",
+        "Kilian Sandholzer",
+        "Andreas Reiserer"
+      ],
+      "categories": [
+        "quant-ph",
+        "cond-mat.other"
+      ],
+      "url": "http://arxiv.org/abs/2604.00138v1"
+    }
+  ],
+  "generated_at": "2026-04-15T16:17:54.414268"
+}

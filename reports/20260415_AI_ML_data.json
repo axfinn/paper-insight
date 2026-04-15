@@ -1,0 +1,203 @@
+{
+  "industry": "AI/ML",
+  "date": "20260415",
+  "papers": [
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2604.13035v1",
+      "title": "SceneCritic: A Symbolic Evaluator for 3D Indoor Scene Synthesis",
+      "summary": "Large Language Models (LLMs) and Vision-Language Models (VLMs) increasingly generate indoor scenes through intermediate structures such as layouts and scene graphs, yet evaluation still relies on LLM or VLM judges that score rendered views, making judgments sensitive to viewpoint, prompt phrasing, and hallucination. When the evaluator is unstable, it becomes difficult to determine whether a model has produced a spatially plausible scene or whether the output score reflects the choice of viewpoint, rendering, or prompt. We introduce SceneCritic, a symbolic evaluator for floor-plan-level layouts. SceneCritic's constraints are grounded in SceneOnto, a structured spatial ontology we construct by aggregating indoor scene priors from 3D-FRONT, ScanNet, and Visual Genome. SceneOnto traverses this ontology to jointly verify semantic, orientation, and geometric coherence across object relationships, providing object-level and relationship-level assessments that identify specific violations and successful placements. Furthermore, we pair SceneCritic with an iterative refinement test bed that probes how models build and revise spatial structure under different critic modalities: a rule-based critic using collision constraints as feedback, an LLM critic operating on the layout as text, and a VLM critic operating on rendered observations. Through extensive experiments, we show that (a) SceneCritic aligns substantially better with human judgments than VLM-based evaluators, (b) text-only LLMs can outperform VLMs on semantic layout quality, and (c) image-based VLM refinement is the most effective critic modality for semantic and orientation correction.",
+      "published": "2026-04-14",
+      "authors": [
+        "Kathakoli Sengupta",
+        "Kai Ao",
+        "Paola Cascante-Bonilla"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "url": "http://arxiv.org/abs/2604.13035v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2604.13034v1",
+      "title": "DySkew: Dynamic Data Redistribution for Skew-Resilient Snowpark UDF Execution",
+      "summary": "Snowflake revolutionized data warehousing with an elastic architecture that decouples compute and storage, enabling scalable solutions for diverse data analytics needs. Building on this foundation, Snowflake has advanced its AI Data Cloud vision by introducing Snowpark, a managed turnkey solution that supports data engineering and AI/ML workloads using Python and other programming languages. While Snowpark's User-Defined Function (UDF) execution model offers high throughput, it is highly vulnerable to performance degradation from data skew, where uneven data partitioning causes straggler tasks and unpredictable latency. The non-uniform computational cost of arbitrary user code further exacerbates this classic challenge. This paper presents DySkew, a novel, data-skew-aware execution strategy for Snowpark UDFs. Built upon Snowflake's new generalized skew handling solution, an adaptive data distribution mechanism utilizing per-link state machines. DySkew addresses the unique challenges of user-defined logic with goals of fine-grained per-row mitigation, dynamic runtime adaptation, and low-overhead, cost-aware redistribution. Specifically, for Snowpark, we introduce crucial optimizations, including an eager redistribution strategy and a Row Size Model to dynamically manage overhead for extremely large rows. This dynamic approach replaces the limitations of the previous static round-robin method. We detail the architecture of this framework and showcase its effectiveness through performance evaluations and real-world case studies, demonstrating significant improvements in the execution time and resource utilization for large-scale Snowpark UDF workloads.",
+      "published": "2026-04-14",
+      "authors": [
+        "Chenwei Xie",
+        "Urjeet Shrestha",
+        "Corbin McElhanney",
+        "Lukas Lorimer",
+        "Gopal V",
+        "Zihao Ye",
+        "Yi Pan",
+        "Nic Crouch",
+        "Elliott Brossard",
+        "Florian Funke",
+        "Yuxiong He"
+      ],
+      "categories": [
+        "cs.DC",
+        "cs.DB"
+      ],
+      "url": "http://arxiv.org/abs/2604.13034v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2604.13028v1",
+      "title": "Conflated Inverse Modeling to Generate Diverse and Temperature-Change Inducing Urban Vegetation Patterns",
+      "summary": "Urban areas are increasingly vulnerable to thermal extremes driven by rapid urbanization and climate change. Traditionally, thermal extremes have been monitored using Earth-observing satellites and numerical modeling frameworks. For example, land surface temperature derived from Landsat or Sentinel imagery is commonly used to characterize surface heating patterns. These approaches operate as forward models, translating radiative observations or modeled boundary conditions into estimates of surface thermal states. While forward models can predict land surface temperature from vegetation and urban form, the inverse problem of determining spatial vegetation configurations that achieve a desired regional temperature shift remains largely unexplored. This task is inherently underdetermined, as multiple spatial vegetation patterns can yield similar aggregated temperature responses. Conventional regression and deterministic neural networks fail to capture this ambiguity and often produce averaged solutions, particularly under data-scarce conditions. We propose a conflated inverse modeling framework that combines a predictive forward model with a diffusion-based generative inverse model to produce diverse, physically plausible image-based vegetation patterns conditioned on specific temperature goals. Our framework maintains control over thermal outcomes while enabling diverse spatial vegetation configurations, even when such combinations are absent from training data. Altogether, this work introduces a controllable inverse modeling approach for urban climate adaptation that accounts for the inherent diversity of the problem. Code is available at the GitHub repository.",
+      "published": "2026-04-14",
+      "authors": [
+        "Baris Sarper Tezcan",
+        "Hrishikesh Viswanath",
+        "Rubab Saher",
+        "Daniel Aliaga"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "url": "http://arxiv.org/abs/2604.13028v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2604.13024v1",
+      "title": "CLAD: Efficient Log Anomaly Detection Directly on Compressed Representations",
+      "summary": "The explosive growth of system logs makes streaming compression essential, yet existing log anomaly detection (LAD) methods incur severe pre-processing overhead by requiring full decompression and parsing. We introduce CLAD, the first deep learning framework to perform LAD directly on compressed byte streams. CLAD bypasses these bottlenecks by exploiting a key insight: normal logs compress into regular byte patterns, while anomalies systematically disrupt them. To extract these multi-scale deviations from opaque bytes, we propose a purpose-built architecture integrating a dilated convolutional byte encoder, a hybrid Transformer--mLSTM, and four-way aggregation pooling. This is coupled with a two-stage training strategy of masked pre-training and focal-contrastive fine-tuning to effectively handle severe class imbalance. Evaluated across five datasets, CLAD achieves a state-of-the-art average F1-score of 0.9909 and outperforms the best baseline by 2.72 percentage points. It delivers superior accuracy while completely eliminating decompression and parsing overheads, offering a robust solution that generalizes to structured streaming compressors.",
+      "published": "2026-04-14",
+      "authors": [
+        "Benzhao Tang",
+        "Shiyu Yang"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.DB"
+      ],
+      "url": "http://arxiv.org/abs/2604.13024v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2604.13023v1",
+      "title": "SpotSound: Enhancing Large Audio-Language Models with Fine-Grained Temporal Grounding",
+      "summary": "Large Audio-Language Models (ALMs) have recently demonstrated remarkable capabilities in holistic audio understanding, yet they remain unreliable for temporal grounding, i.e., the task of pinpointing exactly when an event occurs within long-form audio. This limitation stems from two factors: training data dominated by clip-level supervision lacking precise timestamps, and benchmarks that fail to simulate real-world scenarios where short events are obscured by dense background sounds. In this paper, we introduce SpotSound, an audio language model designed for grounding audio events. SpotSound incorporates a novel training objective, specifically designed to suppress hallucinated timestamps for events absent from the input. Additionally, we present SpotSound-Bench, a challenging temporal grounding benchmark where target events occupy less than ~10\\% of each clip, creating a rigorous `needle-in-a-haystack' evaluation. Experiments demonstrate that SpotSound achieves state-of-the-art results on temporal grounding benchmarks while maintaining robust performance across general downstream audio-language tasks. Code, models and benchmark are released on https://loiesun.github.io/spotsound/",
+      "published": "2026-04-14",
+      "authors": [
+        "Luoyi Sun",
+        "Xiao Zhou",
+        "Zeqian Li",
+        "Ya Zhang",
+        "Yanfeng Wang",
+        "Weidi Xie"
+      ],
+      "categories": [
+        "cs.SD",
+        "cs.MM"
+      ],
+      "url": "http://arxiv.org/abs/2604.13023v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2604.13021v1",
+      "title": "Representation geometry shapes task performance in vision-language modeling for CT enterography",
+      "summary": "Computed tomography (CT) enterography is a primary imaging modality for assessing inflammatory bowel disease (IBD), yet the representational choices that best support automated analysis of this modality are unknown. We present the first study of vision-language transfer learning on abdominal CT enterography and identify two main findings. First, mean pooling of slice embeddings gives better categorical disease assessment (59.2\\% three-class accuracy), whereas attention pooling gives better cross-modal retrieval (0.235 text-to-image MRR). This pattern holds across all LoRA configurations tested and suggests that the two aggregators emphasize different properties of the learned representation. Second, per-slice tissue contrast matters more than broader spatial coverage: multi-window RGB encoding, which maps complementary Hounsfield Unit windows to RGB channels, outperforms all strategies that increase spatial coverage through multiplanar sampling, and in this setting adding coronal and sagittal views reduces classification performance. For report generation, fine-tuning without retrieval context yields within-1 severity accuracy at the prevalence-matched chance level (70.4\\% vs.\\ 71\\% random), suggesting little learned ordering beyond the class distribution. Retrieval-augmented generation (RAG) improves this across all configurations, scoring 7--14 percentage points above the chance baseline and improving ordinal MAE from 0.98 to 0.80--0.89. A three-teacher pseudolabel framework enables all comparisons without expert annotations. Together, these findings provide the first baselines for this underexplored modality and offer practical guidance for building vision-language systems for volumetric medical imaging.",
+      "published": "2026-04-14",
+      "authors": [
+        "Cristian Minoccheri",
+        "Emily Wittrup",
+        "Kayvan Najarian",
+        "Ryan Stidham"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "url": "http://arxiv.org/abs/2604.13021v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2604.13019v1",
+      "title": "See, Point, Refine: Multi-Turn Approach to GUI Grounding with Visual Feedback",
+      "summary": "Computer Use Agents (CUAs) fundamentally rely on graphical user interface (GUI) grounding to translate language instructions into executable screen actions, but editing-level grounding in dense coding interfaces, where sub-pixel accuracy is required to interact with dense IDE elements, remains underexplored. Existing approaches typically rely on single-shot coordinate prediction, which lacks a mechanism for error correction and often fails in high-density interfaces. In this technical report, we conduct an empirical study of pixel-precise cursor localization in coding environments. Instead of a single-step execution, our agent engages in an iterative refinement process, utilizing visual feedback from previous attempts to reach the target element. This closed-loop grounding mechanism allows the agent to self-correct displacement errors and adapt to dynamic UI changes. We evaluate our approach across GPT-5.4, Claude, and Qwen on a suite of complex coding benchmarks, demonstrating that multi-turn refinement significantly outperforms state-of-the-art single-shot models in both click precision and overall task success rate. Our results suggest that iterative visual reasoning is a critical component for the next generation of reliable software engineering agents. Code: https://github.com/microsoft/precision-cua-bench.",
+      "published": "2026-04-14",
+      "authors": [
+        "Himangi Mittal",
+        "Gaurav Mittal",
+        "Nelson Daniel Troncoso",
+        "Yu Hu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "url": "http://arxiv.org/abs/2604.13019v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2604.13018v1",
+      "title": "Toward Autonomous Long-Horizon Engineering for ML Research",
+      "summary": "Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sustain coherent progress across task comprehension, environment setup, implementation, experimentation, and debugging over hours or days. We introduce AiScientist, a system for autonomous long-horizon engineering for ML research built on a simple principle: strong long-horizon performance requires both structured orchestration and durable state continuity. To this end, AiScientist combines hierarchical orchestration with a permission-scoped File-as-Bus workspace: a top-level Orchestrator maintains stage-level control through concise summaries and a workspace map, while specialized agents repeatedly re-ground on durable artifacts such as analyses, plans, code, and experimental evidence rather than relying primarily on conversational handoffs, yielding thin control over thick state. Across two complementary benchmarks, AiScientist improves PaperBench score by 10.54 points on average over the best matched baseline and achieves 81.82 Any Medal% on MLE-Bench Lite. Ablation studies further show that File-as-Bus protocol is a key driver of performance, reducing PaperBench by 6.41 points and MLE-Bench Lite by 31.82 points when removed. These results suggest that long-horizon ML research engineering is a systems problem of coordinating specialized work over durable project state, rather than a purely local reasoning problem.",
+      "published": "2026-04-14",
+      "authors": [
+        "Guoxin Chen",
+        "Jie Chen",
+        "Lei Chen",
+        "Jiale Zhao",
+        "Fanzhe Meng",
+        "Wayne Xin Zhao",
+        "Ruihua Song",
+        "Cheng Chen",
+        "Ji-Rong Wen",
+        "Kai Jia"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "url": "http://arxiv.org/abs/2604.13018v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2604.13016v1",
+      "title": "Rethinking On-Policy Distillation of Large Language Models: Phenomenology, Mechanism, and Recipe",
+      "summary": "On-policy distillation (OPD) has become a core technique in the post-training of large language models, yet its training dynamics remain poorly understood. This paper provides a systematic investigation of OPD dynamics and mechanisms. We first identify that two conditions govern whether OPD succeeds or fails: (i) the student and teacher should share compatible thinking patterns; and (ii) even with consistent thinking patterns and higher scores, the teacher must offer genuinely new capabilities beyond what the student has seen during training. We validate these findings through weak-to-strong reverse distillation, showing that same-family 1.5B and 7B teachers are distributionally indistinguishable from the student's perspective. Probing into the token-level mechanism, we show that successful OPD is characterized by progressive alignment on high-probability tokens at student-visited states, a small shared token set that concentrates most of the probability mass (97%-99%). We further propose two practical strategies to recover failing OPD: off-policy cold start and teacher-aligned prompt selection. Finally, we show that OPD's apparent free lunch of dense token-level reward comes at a cost, raising the question of whether OPD can scale to long-horizon distillation.",
+      "published": "2026-04-14",
+      "authors": [
+        "Yaxuan Li",
+        "Yuxin Zuo",
+        "Bingxiang He",
+        "Jinqian Zhang",
+        "Chaojun Xiao",
+        "Cheng Qian",
+        "Tianyu Yu",
+        "Huan-ang Gao",
+        "Wenkai Yang",
+        "Zhiyuan Liu",
+        "Ning Ding"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "url": "http://arxiv.org/abs/2604.13016v1"
+    },
+    {
+      "source": "arXiv",
+      "id": "http://arxiv.org/abs/2604.13010v1",
+      "title": "Lightning OPD: Efficient Post-Training for Large Reasoning Models with Offline On-Policy Distillation",
+      "summary": "On-policy distillation (OPD) has emerged as an efficient post-training paradigm for large language models. However, standard OPD requires a live teacher inference server throughout training, resulting in substantial infrastructure overhead. In this work, we investigate whether on-policy distillation can be performed offline. A natural approach is to precompute teacher log-probabilities once over SFT rollouts and reuse them during training. In practice, however, this offline variant fails to reliably match the performance of standard OPD. To understand this discrepancy, we identify a previously overlooked condition that is critical for any OPD pipeline, which we term teacher consistency. This condition requires that the same teacher model be used for both supervised fine-tuning and OPD. We show that violating teacher consistency introduces an irreducible gradient bias, causing both offline and online OPD to converge to a suboptimal fixed point regardless of training duration. Building on this insight, we propose Lightning OPD, an offline on-policy distillation framework that enforces teacher consistency by precomputing teacher log-probabilities over SFT rollouts. This design eliminates the need for a live teacher server entirely. We further show that, under teacher consistency, Lightning OPD shares the same optimum as standard OPD, with bounded gradient discrepancy and an implicit regularization effect that helps prevent policy drift. Extensive experiments on mathematical reasoning and code generation demonstrate that Lightning OPD achieves state-of-the-art performance with significantly improved efficiency. Starting from an SFT-initialized Qwen3-8B-Base model, Lightning OPD reaches 69.9% on AIME 2024 in just 30 GPU hours, achieving a 4.0x speedup over standard OPD and substantially lowering the barrier to entry for academic research on LLM post-training.",
+      "published": "2026-04-14",
+      "authors": [
+        "Yecheng Wu",
+        "Song Han",
+        "Hai Cai"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "url": "http://arxiv.org/abs/2604.13010v1"
+    }
+  ],
+  "generated_at": "2026-04-15T16:17:54.412069"
+}
