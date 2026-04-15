@@ -214,7 +214,10 @@ pre { background: #1e293b; color: #e2e8f0; padding: 1rem; border-radius: 8px; ov
     (hugo_dir / 'layouts' / '_default' / 'single.html').parent.mkdir(parents=True, exist_ok=True)
     (hugo_dir / 'layouts' / '_default' / 'single.html').write_text(layout_html)
 
-    # 复制 hugo.toml
+    # 复制 hugo.toml（清理旧的 themes 避免冲突）
+    if (hugo_dir / 'themes').exists():
+        shutil.rmtree(hugo_dir / 'themes')
+
     hugo_config = """baseURL = "http://localhost:8084/"
 languageCode = "zh-cn"
 title = "Paper Insight | 论文情报站"
