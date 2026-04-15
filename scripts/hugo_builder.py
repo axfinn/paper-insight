@@ -214,6 +214,28 @@ pre { background: #1e293b; color: #e2e8f0; padding: 1rem; border-radius: 8px; ov
     (hugo_dir / 'layouts' / '_default' / 'single.html').parent.mkdir(parents=True, exist_ok=True)
     (hugo_dir / 'layouts' / '_default' / 'single.html').write_text(layout_html)
 
+    # 添加首页模板（解决 Hugo 不生成 index.html 的问题）
+    home_template = """<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }}</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div style="max-width: 900px; margin: 0 auto; padding: 2rem;">
+        {{ .Content }}
+    </div>
+    <footer style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; color: #64748b; text-align: center;">
+        <p>Paper Insight | 自动更新的论文情报站 | 生成时间: """ + datetime.now().strftime('%Y-%m-%d %H:%M:%S') + """</p>
+    </footer>
+</body>
+</html>
+"""
+    (hugo_dir / 'layouts' / '_default' / 'list.html').write_text(home_template)
+    (hugo_dir / 'layouts' / 'index.html').write_text(home_template)
+
     # 复制 hugo.toml（清理旧的 themes 避免冲突）
     if (hugo_dir / 'themes').exists():
         shutil.rmtree(hugo_dir / 'themes')

@@ -21,7 +21,7 @@ services:
       # autodev 工作目录持久化
       - ./autodev_workspace:/tmp/autodev
       # Claude CLI 配置（复用主机的登录状态）
-      - ~/.claude:/home/appuser/.claude:ro
+      - ~/.claude:/home/appuser/.claude
     ports:
       - "8084:8084"
     networks:
